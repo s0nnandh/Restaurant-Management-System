@@ -1,0 +1,500 @@
+1. Tomato and barley risotto
+
+Creamy risotto rice with cherry tomatoes and barley
+
+olive oil | onion | garlic | spring onions | rice | cumin | parmesan | tomato | barley | cream
+2. Jalapeno and nectarine gyoza
+
+Thin pastry cases stuffed with fresh jalapeno and nectarine
+
+flour | water | salt | onions | jalapeno | nectarine
+3. Squash and blackcurrant cordial salad
+
+A crisp salad featuring fresh squash and blackcurrant cordial
+
+cucumber | tomato | lettuce | squash | blackcurrant cordial
+4. Monkfish and pepper curry
+
+Mild curry made with monkfish and roasted pepper
+
+onion | peppers | garlic | ginger | tumeric | cumin | coriander | curry leaf | green chilli | monkfish | pepper
+5. Fish and banana vindaloo
+
+Spicy vindaloo made with fish and fresh banana
+
+onion | peppers | garlic | ginger | tumeric | cumin | coriander | black pepper | mustard seeds | cardamon | cinnamon | white wine vinegar | cayenne | fish | banana
+6. Sausage and pork burgers
+
+Tasty burgers made from chunky sausage and pork, served in a roll
+
+flour | yeast | water | salt | sugar | oil | onions | sausage | pork
+7. Basil and courgette stir fry
+
+Crunchy stir fry featuring basil and fresh courgette
+
+spices | basil | courgette
+8. Rosemary and cod gyoza
+
+Thin pastry cases stuffed with fresh rosemary and cod
+
+flour | water | salt | onions | rosemary | cod
+9. Loquat and apricot jam
+
+A rich jam made from fresh loquat and apricots
+
+flour | yeast | water | salt | sugar | oil | loquat | apricot
+10. Rice and mango pancake
+
+Fluffy pancake filled with wild rice and dried mango
+
+flour | butter | egg | milk | rice | mango
+11. Mushroom and pepper maki
+
+Toasted seaweed wrapped around sushi rice, filled with chanterelle mushroom and sweet pepper
+
+rice | rice vinegar | sugar | mushroom | pepper
+12. Caramel and ricotta cheesecake
+
+A luxurious cheesecake layered with caramel and ricotta
+
+flour | butter | water | sugar | vanilla | double cream | mascarpone | caramel | ricotta
+13. Cheddar and cranberry bread
+
+Crunchy bread made with cheddar and fresh cranberries
+
+flour | salt | yeast | butter | water | onions | cheddar | cranberry
+14. Matzo farfel and goat cheese salad
+
+A crunchy salad featuring matzo farfel and goat cheese
+
+white cabbage | tomato | cucumber | matzo farfel | goat cheese
+15. Weetabix and chilli bread
+
+Crunchy bread made with weetabix and habanero chilli
+
+flour | salt | yeast | butter | water | sugar | weetabix | chilli
+16. Crab and horseradish wontons
+
+Thin wonton cases stuffed with crab and fresh horseradish
+
+flour | water | salt | onions | crab | horseradish
+17. Almond and treacle cookies
+
+Crumbly cookies made with toasted almond and black treacle
+
+flour | butter | egg | sugar | almond | treacle
+18. Chickpea and cardamom soup
+
+Fresh chickpea and black cardamom combined into creamy soup
+
+onion | chickpea | cardamom | cream
+19. Gougons sole
+
+Crispy, breaded gougons of sole
+
+flour | yeast | water | salt | sugar | oil | sole
+20. Venison and pineapple vindaloo
+
+Hot vindaloo made with venison and fresh pineapple
+
+onion | peppers | garlic | ginger | tumeric | cumin | coriander | black pepper | mustard seeds | cardamon | cinnamon | white wine vinegar | cayenne | venison | pineapple
+21. Quorn and asafoetida madras
+
+Medium-hot madras made with quorn and asafoetida
+
+onion | peppers | garlic | ginger | tumeric | cumin | coriander | red chilli | tomato | quorn | asafoetida
+22. Lobster and avocado spaghetti
+
+Spagetti topped with a blend of fresh lobster and avocado
+
+tomato | passata | onion | garlic | spagetti | oregano | black pepper | lobster | avocado
+23. Tamarind and potato soup
+
+Fresh tamarind and baby new potato combined into smooth soup
+
+onion | tamarind | potato
+24. Sultana and honey cupcakes
+
+Moist cupcakes made with sultana and clover honey
+
+flour | butter | egg | sugar | sultana | honey
+25. Chorizo and mango soup
+
+Spanish chorizo and dried mango combined into smooth soup
+
+garlic | chorizo | mango
+26. Parsley and butter bread
+
+Fluffy bread made with dried parsley and creamy butter
+
+flour | salt | yeast | butter | water | onions | parsley
+27. Trout and cocoa salad
+
+A crisp salad featuring freshly-caught trout and cocoa
+
+cress | white cabbage | lettuce | trout | cocoa
+28. Bran and strawberry cookies
+
+Crunchy cookies made with bran and fresh strawberries
+
+flour | butter | egg | sugar | bran | strawberry
+29. Black pepper and ham pie
+
+A puff pasty case filled with hot black pepper and smoked ham
+
+flour | butter | water | salt | onions | black pepper | ham
+30. Steak and karengo soup
+
+Steak and karengo combined into chunky soup
+
+garlic | steak | karengo
+31. Spinach and spaghetti squash stir fry
+
+Crunchy stir fry featuring fresh spinach and spaghetti squash
+
+onion | spinach | spaghetti squash
+32. Tahini and chicken panini
+
+A hot, pressed panini filled with tahini and corn-fed chicken
+
+flour | yeast | water | salt | sugar | oil | tahini | chicken
+33. Yuzu and cashew salad
+
+A crunchy salad featuring fresh yuzu and cashew
+
+cucumber | tomato | white cabbage | yuzu | cashew
+34. Cauliflower and black pepper korma
+
+Mild korma made with fresh cauliflower and crushed black pepper
+
+onion | peppers | garlic | ginger | tumeric | cumin | coriander | butter | sugar | cream | cauliflower | black pepper
+35. Cheese and mango pudding
+
+A rich suet pudding made with fresh cheese and dried mango
+
+flour | butter | water | salt | onions | cheese | mango
+36. Potato and ginger bread
+
+Fluffy bread made with baby new potato and fresh ginger
+
+flour | salt | yeast | butter | water | onions | potato | ginger
+37. Parsnip and mussel soup
+
+Baby parsnips and mussel combined into smooth soup
+
+onion | parsnip | mussel
+38. Coriander and peanut madras
+
+Medium-hot madras made with fresh coriander and peanut
+
+onion | peppers | garlic | ginger | tumeric | cumin | coriander | red chilli | tomato | peanut
+39. Vanilla and redcurrant jam
+
+A rich jam made from vanilla and fresh redcurrant
+
+flour | yeast | water | salt | sugar | oil | vanilla | redcurrant
+40. Prawn and beef soup
+
+King prawns and beef combined into smooth soup
+
+onion | prawn | beef
+41. Garam masala and ricotta parcels
+
+Thin filo pastry cases stuffed with garam masala and ricotta
+
+flour | water | salt | onions | garam masala | ricotta
+42. Spinach and black pepper lasagne
+
+Layers of fresh egg pasta interspersed with baby spinach and crushed black pepper
+
+tomato | passata | onion | garlic | pasta | oregano | black pepper | basil | spinach
+43. Tofu and chickpea korma
+
+Creamy korma made with crispy tofu and fresh chickpea
+
+onion | peppers | garlic | ginger | tumeric | cumin | coriander | butter | sugar | cream | tofu | chickpea
+44. Cabbage and sausage wontons
+
+Thin wonton cases stuffed with savoy cabbage and Cumberland sausage
+
+flour | water | salt | onions | cabbage | sausage
+45. Elderberry and huckleberry salad
+
+A crisp salad featuring fresh elderberry and huckleberry
+
+white cabbage | tomato | cucumber | elderberry | huckleberry
+46. Tofu and chickpea madras
+
+Medium-hot madras made with crispy tofu and fresh chickpea
+
+onion | peppers | garlic | ginger | tumeric | cumin | coriander | red chilli | tomato | tofu | chickpea
+47. Black pepper and mustard seed vindaloo
+
+Spicy vindaloo made with crushed black pepper and black mustard seeds
+
+onion | peppers | garlic | ginger | tumeric | cumin | coriander | black pepper | mustard seeds | cardamon | cinnamon | white wine vinegar | cayenne | mustard seed
+48. Parmesan and aubergine bread
+
+Crunchy bread made with parmesan and salted aubergine
+
+flour | salt | yeast | butter | water | onions | parmesan | aubergine
+49. Nectarine and persimmon wontons
+
+Thin wonton cases stuffed with fresh nectarine and persimmon
+
+flour | water | salt | onions | nectarine | persimmon
+50. Courgette and shallot fritters
+
+Crispy fritters filled with yellow courgette and fresh shallot
+
+flour | butter | egg | milk | courgette | shallot
+51. Wheat bran and raspberry salad
+
+Wheat bran and fresh raspberry served on a bed of lettuce
+
+lettuce | wheat bran | raspberry
+52. Truffle and hake salad
+
+Truffle and hake served on a bed of lettuce
+
+lettuce | truffle | hake
+53. Jalapeno and thyme pizza
+
+Thin and crispy pizza topped with fresh jalapeno and thyme
+
+flour | yeast | water | salt | sugar | oil | cheese | jalapeno | thyme
+54. Strawberry and plumcot salad
+
+Fresh strawberries and plumcot served on a bed of lettuce
+
+lettuce | strawberry | plumcot
+55. Cauliflower and sweetcorn curry
+
+Mild curry made with fresh cauliflower and creamed sweetcorn
+
+onion | peppers | garlic | ginger | tumeric | cumin | coriander | curry leaf | green chilli | cauliflower | sweetcorn
+56. Napolitana and falafel salad
+
+A crisp salad featuring napolitana and falafel
+
+cress | cucumber | white cabbage | napolitana | falafel
+57. Chicken and mustard seed madras
+
+Medium-hot madras made with free range chicken and black mustard seeds
+
+onion | peppers | garlic | ginger | tumeric | cumin | coriander | red chilli | tomato | chicken | mustard seed
+58. Stilton and pesto spaghetti
+
+Spagetti topped with a blend of stilton and basil pesto
+
+tomato | passata | onion | garlic | spagetti | oregano | black pepper | stilton | pesto
+59. Potato and cheese pizza
+
+Deep pan pizza topped with baby new potato and vintage cheese
+
+flour | yeast | water | salt | sugar | oil | cheese | potato
+60. Cardamom and honey bread
+
+Fluffy bread made with black cardamom and clear honey
+
+flour | salt | yeast | butter | water | onions | cardamom | honey
+61. Pasta and peanut soup
+
+Fresh penne pasta and peanut combined into creamy soup
+
+onion | pasta | peanut | cream
+62. Chocolate and honey mousse
+
+A silky mousse made with white chocolate and manuka honey
+
+egg | cream | onions | chocolate | honey
+63. Chicken and black pepper toastie
+
+Hot slices of bread filled with corn-fed chicken and crushed black pepper
+
+flour | yeast | water | salt | sugar | oil | chicken | black pepper
+64. Sultana and cinnamon bread
+
+Crunchy bread made with sultana and cinnamon
+
+flour | salt | yeast | butter | water | onions | sultana | cinnamon
+65. Egg and chard curry
+
+Mild curry made with free range eggs and fresh chard
+
+onion | peppers | garlic | ginger | tumeric | cumin | coriander | curry leaf | green chilli | egg | chard
+66. Pheasant and ostrich salad
+
+A crisp salad featuring pheasant and ostrich
+
+tomato | cress | lettuce | pheasant | ostrich
+67. Stilton and napolitana fusilli
+
+Fresh egg pasta in a sauce made from stilton and napolitana
+
+tomato | onion | garlic | pasta | oregano | black pepper | stilton | napolitana
+68. Durian and kaffir lime leaf salad
+
+A crisp salad featuring fresh durian and kaffir lime leaf
+
+cress | cucumber | lettuce | durian | kaffir lime leaf
+69. Oatbran and peach buns
+
+Crumbly buns made with oatbran and fresh peach
+
+flour | butter | egg | sugar | oatbran | peach
+70. Veal and nectarine parcels
+
+Thin filo pastry cases stuffed with veal and fresh nectarine
+
+flour | water | salt | sugar | veal | nectarine
+71. Game and pumpkin pie
+
+A shortcrust pasty case filled with game and spiced pumpkin
+
+flour | butter | water | salt | onions | game | pumpkin
+72. Chandeau and mozzarella salad
+
+Chandeau and fresh mozzarella served on a bed of lettuce
+
+lettuce | chandeau | mozzarella
+73. Dolcelatte and sausage pasta
+
+Fresh egg pasta in a sauce made from dolcelatte and chunky sausage
+
+tomato | onion | garlic | pasta | oregano | black pepper | dolcelatte | sausage
+74. Grappa and feijoa salad
+
+Grappa and fresh feijoa served on a bed of lettuce
+
+lettuce | grappa | feijoa
+75. Pork sausage meat and kumquat salad
+
+Pork sausage meat and fresh kumquat served on a bed of lettuce
+
+lettuce | pork sausage meat | kumquat
+76. Basil and lamb skewers
+
+Bamboo skewers loaded with fresh basil and succulent lamb
+
+onions | basil | lamb
+77. Cabbage and crab dumplings
+
+Thin pastry cases stuffed with chinese cabbage and crab
+
+flour | water | salt | onions | cabbage | crab
+78. Pineapple and beef curry
+
+Hot curry made with fresh pineapple and beef
+
+onion | peppers | garlic | ginger | tumeric | cumin | coriander | curry leaf | green chilli | pineapple | beef
+79. Raita and grouse salad
+
+A crisp salad featuring raita and grouse
+
+cress | tomato | lettuce | raita | grouse
+80. Hazelnut and ginger cake
+
+Moist cake made with hazelnut and stem ginger
+
+flour | butter | egg | sugar | hazelnut | ginger
+81. Mint and marrow salad
+
+Dried mint and fresh marrow served on a bed of lettuce
+
+lettuce | mint | marrow
+82. Coconut and pepper madras
+
+Medium-hot madras made with fresh coconut and red pepper
+
+onion | peppers | garlic | ginger | tumeric | cumin | coriander | red chilli | tomato | coconut | pepper
+83. Pineapple and sole salad
+
+Fresh pineapple and sole served on a bed of lettuce
+
+lettuce | pineapple | sole
+84. Lamb and tumeric vindaloo
+
+Hot vindaloo made with minced lamb and tumeric
+
+onion | peppers | garlic | ginger | tumeric | cumin | coriander | black pepper | mustard seeds | cardamon | cinnamon | white wine vinegar | cayenne | lamb
+85. Vanilla and milk chocolate mousse
+
+A creamy mousse made with vanilla and milk chocolate
+
+egg | cream | onions | vanilla | milk chocolate
+86. Pineapple and honey cake
+
+Rich cake made with fresh pineapple and clover honey
+
+flour | butter | egg | sugar | pineapple | honey
+87. Pesto and feta dumplings
+
+Thin pastry cases stuffed with sun-dried tomato pesto and tangy feta
+
+flour | water | salt | onions | pesto | feta
+88. Prune and blueberry buns
+
+Fluffy buns made with fresh prune and blueberry
+
+flour | butter | egg | sugar | prune | blueberry
+89. Coriander and millet buns
+
+Rich buns made with fresh coriander and millet
+
+flour | butter | egg | sugar | coriander | millet
+90. Weetabix and boar salad
+
+A crisp salad featuring weetabix and boar
+
+white cabbage | cucumber | lettuce | weetabix | boar
+91. Cardamom and rosemary muffins
+
+Rich muffins made with green cardamom and dried rosemary
+
+flour | butter | egg | sugar | cardamom | rosemary
+92. Beetroot and venison soup
+
+Fresh beetroot and venison combined into chunky soup
+
+garlic | beetroot | venison
+93. Marsala and galliano salad
+
+A crisp salad featuring marsala and galliano
+
+white cabbage | lettuce | tomato | marsala | galliano
+94. Mustard seed and vermicelli soup
+
+Black mustard seeds and vermicelli combined into creamy soup
+
+garlic | mustard seed | vermicelli | cream
+95. Spinach and leek pasta
+
+Fresh egg pasta in a sauce made from fresh spinach and baby leek
+
+tomato | onion | garlic | pasta | oregano | black pepper | spinach | leek
+96. Raspberry and rosemary cookies
+
+Crunchy cookies made with fresh raspberry and dried rosemary
+
+flour | butter | egg | sugar | raspberry | rosemary
+97. Trout and pigeon parcels
+
+Thin filo pastry cases stuffed with rainbow trout and pigeon
+
+flour | water | salt | onions | trout | pigeon
+98. Brisket and boysenberry salad
+
+A crunchy salad featuring brisket and fresh boysenberry
+
+cucumber | cress | lettuce | brisket | boysenberry
+99. Grapefruit and banana panini
+
+A warm, pressed panini filled with ruby grapefruit and fresh banana
+
+flour | yeast | water | salt | sugar | oil | grapefruit | banana
+100. Olive and bacon pasta
+
+Fresh egg pasta in a sauce made from olive and back bacon
+
+tomato | onion | garlic | pasta | oregano | black pepper | olive | bacon
