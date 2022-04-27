@@ -1,15 +1,116 @@
-body{
-	margin:0;
-	color:#6a6f8c;
-	background:#244771;
-	font:600 16px/18px 'Open Sans',sans-serif;
-}
-*,:after,:before{box-sizing:border-box}
-.clearfix:after,.clearfix:before{content:'';display:table}
-.clearfix:after{clear:both;display:block}
-a{color:inherit;text-decoration:none}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #04AA6D;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
 
-.login-wrap{
+.center {
+    /* border: 5px solid #FFFF00; */
+    text-align: center;
+    display:flex;
+    
+    justify-content:center;
+}
+
+/* table, th, td {
+    border: 1px solid black;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  h1 {
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    font-size: 150%;
+}
+
+.inc_font{
+  font-size: larger;
+}
+
+.c1{
+  color: red;
+}
+
+.c2{
+  color: green;
+}
+
+.c3{
+  color: blue;
+}
+
+.mat-card{
+  background-color: beige;
+  width: 200px;
+}
+
+.mat-card-title{
+  font-size: medium;
+}
+
+.l-table{
+  float: left ;
+  width: 33%;
+
+}
+
+.m-table{
+  float: left;
+  width: 33%;
+  
+}
+
+.r-table{
+  float: right;
+  width:33%
+} */
+
+/* .demo-tab-group {
+    border: 1px solid #e8e8e8;
+  }
+  
+  .demo-tab-content {
+    padding: 16px;
+  }
+  
+  .mat-tab-label-active{
+    background-color: red ;
+    opacity: 1 !important;
+  } */
+
+ 
+
+::ng-deep .mat-tab-list .mat-tab-labels  {
+    color: rgb(75, 125, 167);
+    background-color: rgb(154, 219, 154);
+    width: 100%;
+    
+    text-align: center;
+    justify-content:center;
+  }
+
+  .login-wrap{
 	width:100%;
 	margin:auto;
 	max-width:525px;
@@ -64,6 +165,11 @@ a{color:inherit;text-decoration:none}
 	position:relative;
 	perspective:1000px;
 	transform-style:preserve-3d;
+    background:#adbfa5;
+    text-align: center;
+    justify-content:center;
+    padding:50px 70px 50px 50px;
+    
 }
 .login-form .group{
 	margin-bottom:15px;
@@ -194,11 +300,12 @@ li a {
     text-align: center;
 }
 
+
 .login-form .group .button {
     /* font-family: Arial; */
 	text-transform:uppercase;
 	width:100%;
-	color:#fff;
+	color:rgb(90, 123, 138);
     font-weight: 600;
 	display:block;
 	color: #0c0609;
@@ -215,10 +322,21 @@ li a {
     cursor: hand; */
   }
   .login-form .group .button:hover {
-    background-color: #cfd8dc;
+    background-color: #b0ccd8;
   }
   .login-form .group .button:disabled {
     background-color: rgb(218, 211, 211);
     color: #aaa;
     cursor: auto;
   }
+
+
+.form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+  
+.field {
+    width: 100%;
+}
