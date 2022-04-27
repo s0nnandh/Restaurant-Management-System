@@ -15,9 +15,34 @@ DROP TABLE IF EXISTS item;
 DROP TABLE IF EXISTS table_;
 DROP TABLE IF EXISTS area;
 
+CREATE SEQUENCE IF NOT EXISTS public.person_seq
+    START WITH 501
+    INCREMENT BY 1;
+
+CREATE SEQUENCE IF NOT EXISTS public.area_seq
+    START WITH 101
+    INCREMENT BY 1;
+
+CREATE SEQUENCE IF NOT EXISTS public.table_seq
+    START WITH 16
+    INCREMENT BY 1;
+
+CREATE SEQUENCE IF NOT EXISTS public.item_seq
+    START WITH 101
+    INCREMENT BY 1;
+
+CREATE SEQUENCE IF NOT EXISTS public.ingredient_seq
+    START WITH 206
+    INCREMENT BY 1;
+
+CREATE SEQUENCE IF NOT EXISTS public.order_seq
+    START WITH 1001
+    INCREMENT BY 1;
+
+
 
 CREATE TABLE area (
-    area_id         INT,
+    area_id         INT DEFAULT nextval('public.area_seq'::regclass),
     locality        TEXT            NOT NULL,
     city            TEXT            NOT NULL,
     pincode         NUMERIC(6,0)    NOT NULL,
@@ -25,7 +50,7 @@ CREATE TABLE area (
 );
 
 CREATE TABLE table_ (
-    table_id         INT,
+    table_id         INT DEFAULT nextval('public.table_seq'::regclass),
     capacity         INT CHECK(capacity BETWEEN 1 AND 12),
     position         TEXT,
     availability    BOOLEAN         NOT NULL,
@@ -33,7 +58,7 @@ CREATE TABLE table_ (
 );
 
 CREATE TABLE item (
-    item_id         INT,
+    item_id         INT DEFAULT nextval('public.item_seq'::regclass),
     item_name       TEXT            NOT NULL    UNIQUE,
     category        TEXT            NOT NULL    CHECK(category='Starter' or category='Main-Course'or category='Dessert'or category='Beverage' or category='Snack-Item'),
     cost            NUMERIC(6,0)    NOT NULL,
@@ -43,13 +68,13 @@ CREATE TABLE item (
 );
 
 CREATE TABLE ingredient (
-    ingredient_id    INT,
+    ingredient_id    INT DEFAULT nextval('public.ingredient_seq'::regclass),
     name        TEXT NOT NULL UNIQUE,
     PRIMARY KEY(ingredient_id)
 );
 
 CREATE TABLE person (
-    id              INT,
+    id              INT     DEFAULT nextval('public.person_seq'::regclass),
     name            TEXT    NOT NULL,
     phone_number    TEXT     NOT NULL   UNIQUE,
     PRIMARY KEY(id)
@@ -95,7 +120,7 @@ CREATE TABLE delivery_person (
 );
 
 CREATE TABLE order_ (
-    order_id         INT,
+    order_id         INT DEFAULT nextval('public.order_seq'::regclass),
     total_cost       INT NOT NULL,
     payment_method   TEXT NOT NULL CHECK(payment_method='Cash' or payment_method='Card' or payment_method='UPI'),
     order_mode       TEXT NOT NULL CHECK(order_mode='Online' or order_mode='In-person'),

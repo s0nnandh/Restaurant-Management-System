@@ -13,7 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class AdditemComponent implements OnInit {
 
-  ingredients!: FormArray;
+  k!: FormArray;
   // ItemForm! : FormGroup;
   ingrForm = new FormGroup(
     {
@@ -28,18 +28,24 @@ export class AdditemComponent implements OnInit {
       cost: new FormControl('', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
       category: new FormControl('', [Validators.required]),
       isVeg: new FormControl('', [Validators.required]),
-      ingredients: new FormArray([]),
+      ingredients: new FormArray([],[Validators.required]),
     }
   );
 
-  constructor() { }
+  constructor() { 
+    // this.addItem();
+  }
 
   ngOnInit(): void {
     this.ItemForm.reset();
   }
   addItem(){
-    this.ingredients = this.ItemForm.get('ingredients') as FormArray;
-    this.ingredients.push(this.ingrForm);
+    this.k = this.ItemForm.get('ingredients') as FormArray;
+    this.k.push(this.ingrForm);
+  }
+
+  newItem(){
+    console.log("rAJESH");
   }
 
 }
