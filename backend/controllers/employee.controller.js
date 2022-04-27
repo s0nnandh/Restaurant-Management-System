@@ -31,6 +31,7 @@ module.exports = {
                         res.send(data[0]);
                     })
                     .catch(error => {
+                        db.any(`delete from person where id = $1`, [q1.id]);
                         console.log(error);
                         return next(error);
                     })                
@@ -65,6 +66,7 @@ module.exports = {
                         res.send(data[0]);
                     })
                     .catch(error => {
+                        db.any(`delete from person where id = $1`, [q1.id]);
                         console.log(error);
                         return next(error);
                     })                
@@ -102,6 +104,7 @@ module.exports = {
                         res.send(data[0]);
                     })
                     .catch(error => {
+                        db.any(`delete from person where id = $1`, [q1.id]);
                         console.log(error);
                         return next(error);
                     })                

@@ -16,7 +16,17 @@ module.exports = {
         order by a.item_name, c.name;`;
         
         db.any(get_query, []).then(result => {
-            res.send(result);
+            const processed_res = [];
+            const check_dict = {};
+            for (let i = 0; i < result.length; i++) {
+                const element = result[i];
+                if (!(element.item_name in check_dict)) {
+                    check_dict[element.item_name] = 1;
+                    processed_res.push(element);
+                }
+                
+            }
+            res.send(processed_res);
         })
         .catch((err) => {
             console.log(err);
