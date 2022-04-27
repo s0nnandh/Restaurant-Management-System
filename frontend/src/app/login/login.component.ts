@@ -1,3 +1,5 @@
+// import { Component, OnInit } from '@angular/core';
+// import { WebRequestService } from '../Services/web-request.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, FormControl} from '@angular/forms';
@@ -5,11 +7,18 @@ import { Validators } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class LoginComponent implements OnInit {
+
+
+  public Username = "";
+  public Password = "";
+  public Role = "";
+
+
 
   constructor(private fb: FormBuilder,private router: Router, private activatedroute:ActivatedRoute) { }
 
@@ -21,10 +30,9 @@ export class RegisterComponent implements OnInit {
     repeat_password: new FormControl('', [Validators.required]),
   });
 
-  ngOnInit(): void {
-    this.registerForm.reset();
-  }
 
+  ngOnInit(): void {
+  }
   addRegister(){
     // this.matchesService.addVenue(this.venueForm.value).pipe().subscribe(
     //   (data: any) => {

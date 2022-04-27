@@ -1,0 +1,73 @@
+<body>
+    <ul class="center">
+      
+	 <li><h1>WELCOME TO RESTAURANT</h1></li> 
+    </ul>
+</body>
+<br>
+<div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Register</label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+
+				<div class="group">
+					<label for="user" class="label">Username</label>
+					<input id="user" type="text" class="input">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password">
+				</div>
+            <div class="group">
+                <label for="pass" class="label">Role:</label>
+
+<select id="pass" name="pass" class="input">
+  <option value="Manager">Manager</option>
+  <option value="Chef">Chef</option>
+  <option value="Waiter">Waiter</option>
+  <option value="Delivery Person">Delivery Person</option>
+  <option value="Customer">Customer</option>
+</select>
+            </div>
+                <div class="group">
+					<button type="submit" class="button" > Login</button>  
+				</div>
+			</div>
+
+
+			<form [formGroup]="registerForm" class="form" (ngSubmit)="addRegister()">
+
+			<div class="sign-up-htm">
+				<div class="group">
+					<label for="user" class="label">Username</label>
+					<input id="user" type="text" class="input" formControlName="name">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password" formControlName="password">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Repeat Password</label>
+					<input id="pass" type="password" class="input" data-type="password" formControlName="repeat_password">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Email Address</label>
+					<input id="pass" type="email" class="input" formControlName="email">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Phone Number</label>
+					<input id="pass" type="text" class="input" formControlName="phone_number">
+				</div>
+				<div class="group">
+					<input type="submit" class="button" [disabled]="!registerForm.valid" value="Register">
+				</div>
+				<div class="group"></div>
+				<div class="group">
+					<a for="tab-2" class="group" href="">Already Member?</a>
+				</div>
+			</div>
+			</form>
+	</div>
+</div>
