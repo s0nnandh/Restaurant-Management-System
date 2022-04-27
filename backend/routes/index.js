@@ -8,6 +8,7 @@ const ingredientService = require( path.resolve( __dirname, "../controllers/ingr
 
 module.exports = app => {
     app.get('/api/auth', authService.getMatches);
+    app.post('/api/employee/add_chef', upload.none(), employeeService.addChef)
     app.get('/api/employee/chef_info', employeeService.getChefs);
     app.get('/api/employee/waiter_info', employeeService.getWaiters);
     app.get('/api/employee/delivery_person_info', employeeService.getDeliveryPersons);
