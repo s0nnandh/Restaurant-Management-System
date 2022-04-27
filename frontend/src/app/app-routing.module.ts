@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { ManagerComponent } from './manager/manager.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/register', pathMatch: 'full' },
-  { path: 'register', component: RegisterComponent},
+  {path :'',component:LoginComponent },
+  { path : 'manager',component:ManagerComponent}
 
-
-  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({
