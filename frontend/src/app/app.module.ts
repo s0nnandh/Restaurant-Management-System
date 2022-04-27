@@ -23,6 +23,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { AddemployeeComponent } from './addemployee/addemployee.component';
 import { IngredientComponent } from './ingredient/ingredient.component';
 import { ItemComponent } from './item/item.component';
+import { AdditemComponent } from './additem/additem.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ItemComponent } from './item/item.component';
     EmployeeComponent,
     AddemployeeComponent,
     IngredientComponent,
-    ItemComponent
+    ItemComponent,
+    AdditemComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,79 @@
+<ul>
+    <li style="float:right"><a class="active" href="/login">Log Out</a></li>
+</ul>
+
+<br> <br>
+<div >
+    
+            <div class="center">
+            <div class="login-form">
+                <form [formGroup]="ItemForm" class="form" (ngSubmit)="newItem()">
+
+                    <div class="sign-up-htm">
+                        <div class="group">
+                            <label for="user" class="label">Item Name</label>
+                            <input id="user" type="text" class="input" formControlName="name">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Item Cost</label>
+                            <input id="pass" type="text" class="input" formControlName="cost" placeholder="">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Category:</label>
+                            <select id="pass" name="pass" class="input" formControlName="category">
+                                <option value="Indian">Indian</option>
+                                <option value="Indian2.0">Indian2.0</option>
+                                
+                            </select>
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label" >Veg/Non-Veg:</label>
+                            <select id="pass" name="pass" class="input" formControlName="isVeg">
+                                <option value="Veg">Veg</option>
+                                <option value="Non-Veg">Non-Veg</option>
+                                
+                            </select>
+                        </div>
+                        <!-- <div class="group">
+                            <td>
+                                <label for="pass" class="label">Ingredient1 </label>
+                                <input id="pass" type="text" class="input" formControlName="salary" placeholder="">\
+                            </td>
+                            <td>
+                                <label for="pass" class="label">Quantity </label>
+                                <input id="pass" type="text" class="input" formControlName="salary" placeholder="">
+                            </td>
+                        </div> -->
+                        <!-- <div class="group">
+                            
+                        </div> -->
+                        <!-- <div formControlName="ingredients">   -->
+                         
+                        <div class="group"  
+                            *ngFor="let item of k.controls; let i = index;">
+                            i  
+                            <div [formGroupName]="i">
+                                <td>
+                                    <label for="pass" class="label">Ingredient </label>
+                                    <input id="pass" type="text" class="input" formControlName="ingredient" placeholder="">
+                                </td>
+                                <td>
+                                    <label for="pass" class="label">Quantity </label>
+                                    <input id="pass" type="text" class="input" formControlName="quantity" placeholder="">
+                                </td>
+                            </div>  
+                        </div>
+                        </div>  
+
+                        <strong> ADD INGREDIENT : </strong><button  class="button" (click)="addItem()">Add Ingredient </button>
+                        <br> 
+                        <br>
+                        <div class="group">
+                            <input type="submit" class="button" (click)="newItem()" [disabled]="!ItemForm.valid" value="Add">
+                        </div>
+                        
+                    <!-- </div> -->
+                </form>
+            </div>
+            </div>
+            </div>
