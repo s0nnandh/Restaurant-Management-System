@@ -1,0 +1,143 @@
+<ul>
+    <li style="float:right"><a class="active" href="/login">Log Out</a></li>
+</ul>
+
+<br> <br>
+<div >
+    <mat-tab-group mat-align-tabs="center">
+        <mat-tab class="tab" label="Chef">
+            <div >
+            <br> <br>
+            <div class="center">
+            <div class="login-form">
+                <form [formGroup]="chefForm" class="form" (ngSubmit)="addChef()">
+
+                    <div class="sign-up-htm">
+                        <div class="group">
+                            <label for="user" class="label">Name</label>
+                            <input id="user" type="text" class="input" formControlName="name">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Contact</label>
+                            <input id="pass" type="text" class="input" formControlName="phone_number" placeholder="eg., 9999999999">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Shift Start Time</label>
+                            <input id="pass" type="time" class="input" formControlName="shift_start_time" placeholder="format HH:MM:SS">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Shift End Time</label>
+                            <input id="pass" type="time" class="input" formControlName="shift_end_time">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Salary</label>
+                            <input id="pass" type="text" class="input" formControlName="salary" placeholder="">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Cuisine:</label>
+            
+                            <select id="pass" name="pass" class="input" formControlName="cuisine">
+                            <option value="Italian">Italian</option>
+                            <option value="Mexican">Mexican</option>
+                            </select>
+                        </div>
+                        <div class="group">
+                            <input type="submit" class="button" [disabled]="!chefForm.valid" value="Add">
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+            </div>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Waiter">
+            <div >
+                <br> <br>
+                <div class="center">
+                <div class="login-form">
+                    <form [formGroup]="waiterForm" class="form" (ngSubmit)="addWaiter()">
+    
+                        <div class="sign-up-htm">
+                            <div class="group">
+                                <label for="user" class="label">Name</label>
+                                <input id="user" type="text" class="input" formControlName="name">
+                            </div>
+                            <div class="group">
+                                <label for="pass" class="label">Contact</label>
+                                <input id="pass" type="text" class="input" formControlName="phone_number" placeholder="eg., 9999999999">
+                            </div>
+                            <div class="group">
+                                <label for="pass" class="label">Shift Start Time</label>
+                                <input id="pass" type="time" class="input" formControlName="shift_start_time" placeholder="format HH:MM:SS">
+                            </div>
+                            <div class="group">
+                                <label for="pass" class="label">Shift End Time</label>
+                                <input id="pass" type="time" class="input" formControlName="shift_end_time">
+                            </div>
+                            <div class="group">
+                                <label for="pass" class="label">Salary</label>
+                                <input id="pass" type="text" class="input" formControlName="salary" placeholder="">
+                            </div>
+                            
+                            <div class="group">
+                                <input type="submit" class="button" [disabled]="!waiterForm.valid" value="Add">
+                            </div>
+                            
+                        </div>
+                    </form>
+                </div>
+                </div>
+                </div>
+
+        </mat-tab>
+
+        <mat-tab label="Delivery Person">
+
+            <div >
+                <br> <br>
+                <div class="center">
+                <div class="login-form">
+                    <form [formGroup]="deliverypersonForm" class="form" (ngSubmit)="addDeliveryPerson()">
+    
+                        <div class="sign-up-htm">
+                            <div class="group">
+                                <label for="user" class="label">Name</label>
+                                <input id="user" type="text" class="input" formControlName="name">
+                            </div>
+                            <div class="group">
+                                <label for="pass" class="label">Contact</label>
+                                <input id="pass" type="text" class="input" formControlName="phone_number" placeholder="eg., 9999999999">
+                            </div>
+                            <div class="group">
+                                <label for="pass" class="label">Shift Start Time</label>
+                                <input id="pass" type="time" class="input" formControlName="shift_start_time" placeholder="format HH:MM:SS">
+                            </div>
+                            <div class="group">
+                                <label for="pass" class="label">Shift End Time</label>
+                                <input id="pass" type="time" class="input" formControlName="shift_end_time">
+                            </div>
+                            <div class="group">
+                                <label for="pass" class="label">Salary</label>
+                                <input id="pass" type="text" class="input" formControlName="salary" placeholder="">
+                            </div>
+                            <div class="group">
+                                <label for="pass" class="label">Primary Deivery Area</label>
+                                <input id="pass" type="text" class="input" formControlName="primary_delivery_area" placeholder="">
+                            </div>
+                            <div class="group">
+                                <input type="submit" class="button" [disabled]="!deliverypersonForm.valid" value="Add">
+                            </div>
+                            
+                        </div>
+                    </form>
+                </div>
+                </div>
+                </div>
+
+        </mat-tab>
+    </mat-tab-group>
+
+    
+</div>

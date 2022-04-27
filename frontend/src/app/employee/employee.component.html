@@ -1,0 +1,105 @@
+
+    <ul>
+      <li style="float:right"><a class="active" href="/login">Log Out</a></li>
+    </ul>
+
+
+<br> <br>
+    <div class="dropdown">
+        <button  (click)="showchefs = !showchefs"  class="dropbtn">Chefs</button>
+        <div *ngIf="chefs" allign="center">
+            
+            <table mat-table [dataSource]="chefs" class="mat-elevation-z8" width="90%" [hidden]="!showchefs">
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Name </th>
+                    <td mat-cell *matCellDef="let chef">  {{chef.name}} </td>
+                </ng-container>
+                <ng-container matColumnDef="phone_number">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Contact </th>
+                    <td mat-cell *matCellDef="let chef"> {{chef.phone_number}} </td>
+                </ng-container>
+                <ng-container matColumnDef="shift_timings">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Shift Timings </th>
+                    <td mat-cell *matCellDef="let chef"> {{chef.shift_start_time}} - {{chef.shift_end_time}} </td>
+                </ng-container>
+                <ng-container matColumnDef="chef_rank">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Chef Rank </th>
+                    <td mat-cell *matCellDef="let chef"> {{chef.chef_rank}} </td>
+                </ng-container>
+                <ng-container matColumnDef="cuisine">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Cuisine </th>
+                    <td mat-cell *matCellDef="let chef"> {{chef.cuisine}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="chefscolumn"></tr>
+                <tr mat-row *matRowDef="let row; columns: chefscolumn;"></tr>
+            </table>
+
+            
+        </div>
+    </div>
+
+    <br><br>
+    <div class="dropdown">
+        <button  (click)="showwaiters = !showwaiters"  class="dropbtn">Waiters</button>
+        <div  *ngIf="waiters" allign="center">
+            
+            <table mat-table [dataSource]="waiters" class="mat-elevation-z8" width="90%" [hidden]="!showwaiters">
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Name </th>
+                    <td mat-cell *matCellDef="let waiter">  {{waiter.name}} </td>
+                </ng-container>
+                <ng-container matColumnDef="phone_number">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Contact </th>
+                    <td mat-cell *matCellDef="let waiter"> {{waiter.phone_number}} </td>
+                </ng-container>
+                <ng-container matColumnDef="shift_timings">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Shift Timings </th>
+                    <td mat-cell *matCellDef="let waiter"> {{waiter.shift_start_time}} - {{waiter.shift_end_time}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="waiterscolumn"></tr>
+                <tr mat-row *matRowDef="let row; columns: waiterscolumn;"></tr>
+            </table>
+
+        </div>
+    </div>
+
+    <br><br>
+    <div class="dropdown">
+        <button  (click)="showdeliverypersons = !showdeliverypersons"  class="dropbtn">Delivery Persons</button>
+        <div *ngIf="del_persons" allign="center">
+
+            <table mat-table [dataSource]="del_persons" class="mat-elevation-z8" width="90%" [hidden]="!showdeliverypersons">
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Name </th>
+                    <td mat-cell *matCellDef="let del_person">  {{del_person.name}} </td>
+                </ng-container>
+                <ng-container matColumnDef="phone_number">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Contact </th>
+                    <td mat-cell *matCellDef="let del_person"> {{del_person.phone_number}} </td>
+                </ng-container>
+                <ng-container matColumnDef="shift_timings">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Shift Timings </th>
+                    <td mat-cell *matCellDef="let del_person"> {{del_person.shift_start_time}} - {{del_person.shift_end_time}} </td>
+                </ng-container>
+                <ng-container matColumnDef="primary_area">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Primary Area </th>
+                    <td mat-cell *matCellDef="let del_person"> {{del_person.primary_area}} </td>
+                </ng-container>
+                <ng-container matColumnDef="average_rating">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Average rating </th>
+                    <td mat-cell *matCellDef="let del_person"> {{del_person.average_rating}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="del_persons_column"></tr>
+                <tr mat-row *matRowDef="let row; columns: del_persons_column;"></tr>
+            </table>
+
+        </div>
+    </div>
+
+    <br> <br>
+    <div>
+        <button class="button" routerLink="/addemployee"> Add Employee </button>
+    </div>
+
+
+<router-outlet></router-outlet> 
