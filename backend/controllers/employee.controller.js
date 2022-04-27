@@ -6,29 +6,107 @@ module.exports = {
 
     addChef: function(req, res, next){
 
-        const insert_query_1 = `insert into person (id, name, phone_number) values ($1, $2, $3) returning id;`;
+        const insert_query_1 = `insert into person (name, phone_number) values ($1, $2) returning id;`;
         const insert_query_2 = `insert into employee (id, shift_start_time, shift_end_time, employee_type, salary) values ($1, $2, $3, $4, $5) returning id;`;
         const insert_query_3 = `insert into chef (id, cuisine, chef_rank, availability) values ($1, $2, $3, $4) returning id;`;
 
-        values_1 = [req.body.id, req.body.name, req.body.phone_number];
-        values_2 = [req.body.id, req.body.start_time, req.body.end_time, "Chef", req.body.salary ]
-        values_3 = [req.body.id, req.body.cuisine, req.body.chef_rank, false]
+        values_1 = [req.body.name, req.body.phone_number];
+        
 
         db.tx(t => {
-            // creating a sequence of transaction queries:
             const q1 = t.one(insert_query_1, values_1);
-            const q2 = t.one(insert_query_2, values_2);
-            const q3 = t.one(insert_query_3, values_3);
-        
-            // returning a promise that determines a successful transaction:
-            return t.batch([q1, q2, q3]); // all of the queries are to be resolved;
+            return q1;
         })
-            .then(data => {
-                // success, COMMIT was executed
-                res.send(data);
+            .then(q1 => {
+                db.tx(t => {
+                    console.log(q1);
+
+                    values_2 = [q1.id, req.body.start_time, req.body.end_time, "Chef", req.body.salary ]
+                    values_3 = [q1.id, req.body.cuisine, req.body.chef_rank, false]
+                    const q2 = t.one(insert_query_2, values_2);
+                    const q3 = t.one(insert_query_3, values_3);
+                    return t.batch([q1, q2, q3]);
+                })
+                    .then( data => {
+                        res.send(data[0]);
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        return next(error);
+                    })                
             })
             .catch(error => {
-                // failure, ROLLBACK was executed
+                console.log(error);
+                return next(error);
+            });
+    },
+
+    addWaiter: function(req, res, next){
+
+        const insert_query_1 = `insert into person (name, phone_number) values ($1, $2) returning id;`;
+        const insert_query_2 = `insert into employee (id, shift_start_time, shift_end_time, employee_type, salary) values ($1, $2, $3, $4, $5) returning id;`;
+
+        values_1 = [req.body.name, req.body.phone_number];
+        
+
+        db.tx(t => {
+            const q1 = t.one(insert_query_1, values_1);
+            return q1;
+        })
+            .then(q1 => {
+                db.tx(t => {
+                    console.log(q1);
+
+                    values_2 = [q1.id, req.body.start_time, req.body.end_time, "Waiter", req.body.salary ]
+                    const q2 = t.one(insert_query_2, values_2);
+                    return t.batch([q1, q2]);
+                })
+                    .then( data => {
+                        res.send(data[0]);
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        return next(error);
+                    })                
+            })
+            .catch(error => {
+                console.log(error);
+                return next(error);
+            });
+    },
+
+    addDeliveryPerson: function(req, res, next){
+
+        const insert_query_1 = `insert into person (name, phone_number) values ($1, $2) returning id;`;
+        const insert_query_2 = `insert into employee (id, shift_start_time, shift_end_time, employee_type, salary) values ($1, $2, $3, $4, $5) returning id;`;
+        const insert_query_3 = `insert into delivery_person (id, average_rating, primary_area, availability) values ($1, $2, $3, $4) returning id;`;
+
+        values_1 = [req.body.name, req.body.phone_number];
+        
+
+        db.tx(t => {
+            const q1 = t.one(insert_query_1, values_1);
+            return q1;
+        })
+            .then(q1 => {
+                db.tx(t => {
+                    console.log(q1);
+
+                    values_2 = [q1.id, req.body.start_time, req.body.end_time, "Delivery-Person", req.body.salary ]
+                    values_3 = [q1.id, 5.00, req.body.primary_area, false]
+                    const q2 = t.one(insert_query_2, values_2);
+                    const q3 = t.one(insert_query_3, values_3);
+                    return t.batch([q1, q2, q3]);
+                })
+                    .then( data => {
+                        res.send(data[0]);
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        return next(error);
+                    })                
+            })
+            .catch(error => {
                 console.log(error);
                 return next(error);
             });
