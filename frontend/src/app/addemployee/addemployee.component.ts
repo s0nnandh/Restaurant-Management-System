@@ -47,7 +47,7 @@ export class AddemployeeComponent implements OnInit {
   }
 
   addChef(){
-
+    console.log(this.chefForm);
   }
 
   addWaiter(){
