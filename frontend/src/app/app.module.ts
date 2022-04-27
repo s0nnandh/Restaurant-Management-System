@@ -21,6 +21,7 @@ import { LoginComponent } from './login/login.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { EmployeeComponent } from './employee/employee.component';
 import { AddemployeeComponent } from './addemployee/addemployee.component';
+import { AdditemComponent } from './additem/additem.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { AddemployeeComponent } from './addemployee/addemployee.component';
     AppComponent,
     LoginComponent,
     EmployeeComponent,
-    AddemployeeComponent
+    AddemployeeComponent,
+    AdditemComponent
   ],
   imports: [
     BrowserModule,
