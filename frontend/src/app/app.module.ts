@@ -15,6 +15,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -62,8 +64,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatInputModule,
     MatSidenavModule,
     MatListModule,
-    MatDialogModule
-    
+    MatDialogModule,    
+    MatExpansionModule,
+    MatSlideToggleModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

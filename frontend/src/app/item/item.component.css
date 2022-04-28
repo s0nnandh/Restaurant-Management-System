@@ -1,5 +1,5 @@
 
-li a {
+.li a {
     display: block;
     color: white;
     text-align: center;
@@ -7,14 +7,14 @@ li a {
     text-decoration: none;
   }
   
-  li a:hover:not(.active) {
+  .li a:hover:not(.active) {
     background-color: #111;
   }
   
   .active {
     background-color: #04AA6D;
   }
-  ul {
+  .ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -59,6 +59,33 @@ body{
   }
 
 
+  td.mat-cell, th.mat-header-cell {
+    text-align: center;
+    justify-content:center;
+}
+
+.centre {
+    text-align: center
+  }
+
+  mat-header-cell, mat-header-row, .mat-header-cell-def{
+    min-height:25px;
+    font-family:Verdana,sans-serif;
+    font-weight:bold;
+    font-size:13px;
+    color: #1a084c;
+    margin-bottom:5px;
+     top: 0;
+      position: sticky;
+      z-index: 1;
+      background-color: inherit;
+  }
+
+  .mat-table{
+    background-color: rgb(196, 214, 218);
+  }
+
+
 .example-sidenav-content .mat-icon {
     
     vertical-align: left;
@@ -70,3 +97,14 @@ body{
     justify-content: left;
     
   }
+
+  .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  
+
+.vertical { 
+      /* background-color: yellow;  */
+      display: block;
+      
+}

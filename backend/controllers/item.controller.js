@@ -1,4 +1,5 @@
 const path = require("path");
+const { listenerCount } = require("process");
 const url = require("url");
 const db = require( path.resolve( __dirname, "./index.js" ) );
 
@@ -20,6 +21,7 @@ module.exports = {
             const item_cat = [];
             const check_dict = {};
             const category_wise = {};
+            const li = [];
             for (let i = 0; i < result.length; i++) {
                 const element = result[i];
                 if (!(element.item_name in check_dict)) {
@@ -34,10 +36,13 @@ module.exports = {
                 }
                 category_wise[element.category].push(element)
             });
-            res.send({
-                categories : item_cat,
-                items: category_wise
-            });
+            for (let i = 0; i < item_cat.length; i++){
+                const x = {};
+                x["category"]=item_cat[i];
+                x["items"]=category_wise[item_cat[i]];
+                li.push(x);
+            }
+            res.send(li);
         })
         .catch((err) => {
             console.log(err);
