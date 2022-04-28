@@ -21,6 +21,8 @@ import { LoginComponent } from './login/login.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { EmployeeComponent } from './employee/employee.component';
 import { AddemployeeComponent } from './addemployee/addemployee.component';
+import { IngredientComponent } from './ingredient/ingredient.component';
+import { ItemComponent } from './item/item.component';
 import { AdditemComponent } from './additem/additem.component';
 
 
@@ -30,6 +32,8 @@ import { AdditemComponent } from './additem/additem.component';
     LoginComponent,
     EmployeeComponent,
     AddemployeeComponent,
+    IngredientComponent,
+    ItemComponent,
     AdditemComponent
   ],
   imports: [

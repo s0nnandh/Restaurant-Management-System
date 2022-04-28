@@ -19,15 +19,15 @@
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Contact</label>
-                            <input id="pass" type="text" class="input" formControlName="phone_number" placeholder="eg., 9999999999">
+                            <input id="pass" type="text" class="input" formControlName="phone_number" placeholder="eg., (123) 123-4567">
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Shift Start Time</label>
-                            <input id="pass" type="time" class="input" formControlName="shift_start_time" placeholder="format HH:MM:SS">
+                            <input id="pass" type="time" class="input" formControlName="start_time" placeholder="format HH:MM:SS">
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Shift End Time</label>
-                            <input id="pass" type="time" class="input" formControlName="shift_end_time">
+                            <input id="pass" type="time" class="input" formControlName="end_time">
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Salary</label>
@@ -39,6 +39,18 @@
                             <select id="pass" name="pass" class="input" formControlName="cuisine">
                             <option value="Italian">Italian</option>
                             <option value="Mexican">Mexican</option>
+                            <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Chef Rank:</label>
+            
+                            <select id="pass" name="pass" class="input" formControlName="chef_rank">
+                            <option value="Head Chef">Head Chef</option>
+                            <option value="Sous Chef">Sous Chef</option>
+                            <option value="Station Chef">Station Chef</option>
+                            <option value="Pastery Chef">Pastery Chef</option>
+                            <option value="Other">Other</option>
                             </select>
                         </div>
                         <div class="group">
@@ -66,15 +78,15 @@
                             </div>
                             <div class="group">
                                 <label for="pass" class="label">Contact</label>
-                                <input id="pass" type="text" class="input" formControlName="phone_number" placeholder="eg., 9999999999">
+                                <input id="pass" type="text" class="input" formControlName="phone_number" placeholder="eg., (123) 123-4567">
                             </div>
                             <div class="group">
                                 <label for="pass" class="label">Shift Start Time</label>
-                                <input id="pass" type="time" class="input" formControlName="shift_start_time" placeholder="format HH:MM:SS">
+                                <input id="pass" type="time" class="input" formControlName="start_time" placeholder="format HH:MM:SS">
                             </div>
                             <div class="group">
                                 <label for="pass" class="label">Shift End Time</label>
-                                <input id="pass" type="time" class="input" formControlName="shift_end_time">
+                                <input id="pass" type="time" class="input" formControlName="end_time">
                             </div>
                             <div class="group">
                                 <label for="pass" class="label">Salary</label>
@@ -108,15 +120,15 @@
                             </div>
                             <div class="group">
                                 <label for="pass" class="label">Contact</label>
-                                <input id="pass" type="text" class="input" formControlName="phone_number" placeholder="eg., 9999999999">
+                                <input id="pass" type="text" class="input" formControlName="phone_number" placeholder="eg., (123) 123-4567">
                             </div>
                             <div class="group">
                                 <label for="pass" class="label">Shift Start Time</label>
-                                <input id="pass" type="time" class="input" formControlName="shift_start_time" placeholder="format HH:MM:SS">
+                                <input id="pass" type="time" class="input" formControlName="start_time" placeholder="format HH:MM:SS">
                             </div>
                             <div class="group">
                                 <label for="pass" class="label">Shift End Time</label>
-                                <input id="pass" type="time" class="input" formControlName="shift_end_time">
+                                <input id="pass" type="time" class="input" formControlName="end_time">
                             </div>
                             <div class="group">
                                 <label for="pass" class="label">Salary</label>
@@ -124,7 +136,7 @@
                             </div>
                             <div class="group">
                                 <label for="pass" class="label">Primary Deivery Area</label>
-                                <input id="pass" type="text" class="input" formControlName="primary_delivery_area" placeholder="">
+                                <input id="pass" type="text" class="input" formControlName="primary_area" placeholder="">
                             </div>
                             <div class="group">
                                 <input type="submit" class="button" [disabled]="!deliverypersonForm.valid" value="Add">
