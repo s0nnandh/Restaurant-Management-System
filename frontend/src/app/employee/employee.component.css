@@ -128,6 +128,6 @@ body{
       background-color: inherit;
   }
 
-  /* .mat-table{
-    background-color: beige;
-  } */
+  .mat-table{
+    background-color: rgb(196, 214, 218);
+  }

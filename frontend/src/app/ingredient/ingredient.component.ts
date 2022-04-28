@@ -36,7 +36,20 @@ export class IngredientComponent implements OnInit {
   }
 
   addIngredient(){
-    
+    this.itemService.addIngredient(this.ingreForm.value).pipe().subscribe(
+      (data: any) => {
+      alert("Ingredient is added");
+      console.log('message::::', data);
+      console.log(this.ingreForm.value);
+      this.ingreForm.reset();
+      
+      },
+      (_error: any)=>{
+        alert("Ingredient is not added");
+        console.log(this.ingreForm.value);
+      }
+
+    );
   }
 
 

@@ -55,7 +55,6 @@ export class EmployeeComponent implements OnInit {
       console.log('delivery persons', this.del_persons);
     });
   }
-
   
 
 }

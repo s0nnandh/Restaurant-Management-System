@@ -13,5 +13,8 @@ export class ItemService {
     return this.http.get(`http://localhost:8000/api/ingredient/ingredient_info`);
   }
 
+  addIngredient(data:any){
+    return this.http.post('http://localhost:8000/api/ingredient/add_ingredient', data);
+  }
 
 }

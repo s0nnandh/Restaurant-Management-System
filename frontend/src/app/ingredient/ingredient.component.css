@@ -146,3 +146,7 @@ body{
     color: #aaa;
     cursor: auto;
   }
+
+  .mat-table{
+    background-color: rgb(196, 214, 218);
+  }
