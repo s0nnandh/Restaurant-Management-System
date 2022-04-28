@@ -12,10 +12,15 @@ export class ItemComponent implements OnInit {
   sidenavWidth = 4;
   ngStyle: string | undefined;
 
+  // items: any;
+  // categories:any;
+  menu: any;
+  itemsscolumn: any=['item_name','name','is_veg','cost','availability'];
+
   constructor(private itemService : ItemService, private router: Router, private activatedroute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    
+    this.getItems();
   }
 
   increase() {
@@ -26,5 +31,18 @@ export class ItemComponent implements OnInit {
     this.sidenavWidth = 4;
     console.log('decrease sidenav width');
   }
+
+  getItems(){
+    this.itemService.getItems().pipe().subscribe((data: any) => {
+      //console.log('chefs', d);
+      // this.categories = data.categories;
+      // console.log('categories', this.categories);
+      // this.items = data.items;
+      // console.log('items', this.items);
+      this.menu = data;
+      console.log('items', this.menu);
+    });
+  }
+
   
 }
