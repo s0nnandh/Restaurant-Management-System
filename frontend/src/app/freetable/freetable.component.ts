@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../data.service';
+import { FreeData } from '../tables/tables.component';
 
 @Component({
   selector: 'app-freetable',
@@ -13,15 +15,18 @@ export class FreetableComponent implements OnInit {
 
   id! : number;
 
-  constructor(private dataService : DataService, private router: Router, private route:ActivatedRoute) { }
+  constructor(private dataService : DataService, private router: Router, private route:ActivatedRoute, public dialogRef : MatDialogRef<FreetableComponent>,
+    @Inject(MAT_DIALOG_DATA)
+    public data : FreeData) { }
 
   ngOnInit(): void {
-    this.id = Number(this.route.snapshot.paramMap.get('id'));
+    // this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.getData();
   }
 
   getData(){
     this.total = 1000;
+    console.log('data',this.data);
   }
 
   Pay(){

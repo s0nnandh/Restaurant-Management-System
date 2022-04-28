@@ -1,9 +1,43 @@
-<p>Free Tables</p>
-<div *ngFor="let item of freeTables">
-    Table {{ item }} 
+<br>
+<div class="container">
+    <p> Free Tables </p>
 </div>
+<div class="container">
+<table mat-table [dataSource]="freeTables" class="mat-elevation-z8" width="80%">
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Table Id </th>
+      <td mat-cell *matCellDef="let element"> Table No. {{element.id}} </td>
+    </ng-container>
 
-<p>Busy Tables</p>
-<div *ngFor="let item of busyTables">
-    Table {{ item }} 
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="bookTable(row)" ></tr>
+</table>
+</div>
+<br>
+<div class="container">
+    <p> Booked Tables </p>
+</div>
+<div class="container">
+<table mat-table [dataSource]="busyTables" class="mat-elevation-z8" width="80%">
+    
+    <ng-container matColumnDef="position">
+        <!-- <button mat-raised-button> -->
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        <!-- </button> -->
+    </ng-container>
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Table Id </th>
+      <td mat-cell *matCellDef="let element"> Table No. {{element.id}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="unBook(row)"></tr>
+</table>
 </div>

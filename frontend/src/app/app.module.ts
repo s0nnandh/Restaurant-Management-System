@@ -28,6 +28,7 @@ import { AdditemComponent } from './additem/additem.component';
 import { BooktableComponent } from './booktable/booktable.component';
 import { FreetableComponent } from './freetable/freetable.component';
 import { TablesComponent } from './tables/tables.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { TablesComponent } from './tables/tables.component';
     MatInputModule,
     MatSidenavModule,
     MatListModule,
+    MatDialogModule
     
   ],
   providers: [],

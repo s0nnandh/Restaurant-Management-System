@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 export class AdditemComponent implements OnInit {
 
   k!: FormArray;
+
+  
   // ItemForm! : FormGroup;
   // ingrForm = 
 
@@ -52,6 +54,7 @@ export class AdditemComponent implements OnInit {
   newItem(){
     console.log(this.ItemForm)
     console.log("rAJESH");
+    this.ItemForm.reset();
   }
 
 }

@@ -19,8 +19,6 @@ const routes: Routes = [
   {path : 'item',component:ItemComponent},
   {path : 'additem',component:AdditemComponent},
   { path : 'tables', component : TablesComponent},
-  { path : 'book/:id', component : BooktableComponent},
-  { path : 'free/:id', component : FreetableComponent},
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
