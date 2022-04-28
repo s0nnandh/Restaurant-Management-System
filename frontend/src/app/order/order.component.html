@@ -1,0 +1,90 @@
+<mat-sidenav-container fullscreen>
+    
+    <ul class="ul">
+        <li class="li" style="float:right"><a class="active" href="/login">Log Out</a></li>
+    </ul>
+
+    <mat-sidenav #sidenav  mode="side" class="example-sidenav" [ngStyle]="{ 'width.em': sidenavWidth }" opened="true" (mouseenter)="increase()"
+      (mouseleave)="decrease()">
+      <div class="logomain"></div>
+      <br>
+      <mat-nav-list>
+        <mat-list-item routerLink="/employee" routerLinkActive="active" >
+          <mat-icon mat-list-icon>person</mat-icon>
+          <div fxFlex="10"></div>
+          <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+            <h5 class="lead">Employees</h5>
+          </div>
+        </mat-list-item>
+  
+        <mat-list-item routerLink="/addemployee" routerLinkActive="active">
+          <mat-icon mat-list-icon>add</mat-icon>
+          <div fxFlex="10"></div>
+          <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+            <h5 class="lead">Add Employee</h5>
+          </div>
+        </mat-list-item>
+  
+        <mat-list-item routerLink="/ingredient" routerLinkActive="active">
+          <mat-icon mat-list-icon>store</mat-icon>
+          <div fxFlex="10"></div>
+          <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+            <h5 class="lead">Ingredients</h5>
+          </div>
+        </mat-list-item>
+  
+        <mat-list-item routerLink="/item" routerLinkActive="active">
+            <mat-icon mat-list-icon>view_list</mat-icon>
+            <div fxFlex="10"></div>
+            <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+              <h5 class="lead">Menu</h5>
+            </div>
+        </mat-list-item>
+    
+        <mat-list-item routerLink="/additem" routerLinkActive="active">
+            <mat-icon mat-list-icon>add</mat-icon>
+            <div fxFlex="10"></div>
+            <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+              <h5 class="lead">Add Item</h5>
+            </div>
+        </mat-list-item>
+  
+      </mat-nav-list>
+  
+    </mat-sidenav>
+<br>
+<div class="centre"><h2>Place Order</h2></div>
+
+<div class="vertical">
+    <div class="vertical" *ngFor="let items1 of items;let i = index;">
+        <p>{{ categories[i] }}</p> 
+    <div class="row">
+      <div  *ngFor="let item of items1">
+        <mat-card>
+          
+          
+            <mat-card-title>
+                
+              <h4><strong>Item :</strong>  {{item.name}}</h4>
+            </mat-card-title>
+  
+            <mat-card-content>
+              <h4><strong>Prize :</strong>  {{item.price}}</h4>
+            </mat-card-content>
+            <mat-card-actions>
+                <strong>Quantity :   </strong>
+                <input type=button value="+" (click)="ItemIncrease(item)" />
+                {{ item.quantity }}
+                <input type=button value="-" (click)="ItemDecrease(item)" />
+                
+            </mat-card-actions>
+          
+        </mat-card>
+      </div>
+    </div>
+</div>
+  </div>
+<div class="container"> Total : {{ total }}</div>
+</mat-sidenav-container>
+
+<router-outlet></router-outlet>
