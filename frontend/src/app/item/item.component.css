@@ -1,4 +1,62 @@
 
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #04AA6D;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+
+.center {
+    /* border: 5px solid #FFFF00; */
+    text-align: center;
+}
+body{
+	margin:0;
+	color:#6a6f8c;
+	background:#c8c8c8;
+	font:600 16px/18px 'Open Sans',sans-serif;
+}
+.button {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+.button:hover {
+    background-color: #308566;
+}
+
+  div {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  color: rgb(48, 64, 70);
+  justify-content:center;
+  /* background-color: rgb(155, 215, 231); */
+
+
+  }
 
 
 .example-sidenav-content .mat-icon {

@@ -17,6 +17,7 @@ module.exports = {
         
         db.any(get_query, []).then(result => {
             const processed_res = [];
+            const item_cat = [];
             const check_dict = {};
             const category_wise = {};
             for (let i = 0; i < result.length; i++) {
@@ -28,11 +29,15 @@ module.exports = {
             }
             processed_res.forEach(element => {
                 if(!(element.category in category_wise)){
+                    item_cat.push(element.category);
                     category_wise[element.category] = [];
                 }
                 category_wise[element.category].push(element)
             });
-            res.send(category_wise);
+            res.send({
+                categories : item_cat,
+                items: category_wise
+            });
         })
         .catch((err) => {
             console.log(err);
