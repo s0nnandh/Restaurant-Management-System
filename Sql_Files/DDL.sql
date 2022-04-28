@@ -76,7 +76,8 @@ CREATE TABLE ingredient (
 CREATE TABLE person (
     id              INT     DEFAULT nextval('public.person_seq'::regclass),
     name            TEXT    NOT NULL,
-    phone_number    TEXT     NOT NULL   UNIQUE,
+    phone_number    TEXT    NOT NULL   UNIQUE,
+    password        TEXT    NOT NULL,
     PRIMARY KEY(id)
 );
 
