@@ -13,20 +13,26 @@ module.exports = {
         where a.item_id = b.item_id and a.quantity=b.max_quantity) 
         select a.item_name, c.name, a.category, a.is_veg, a.cost, a.availability from item as a,
         main_ingredient as b , ingredient as c where a.item_id = b.item_id and b.ingredient_id=c.ingredient_id 
-        order by a.item_name, c.name;`;
+        order by a.category, a.item_name, c.name;`;
         
         db.any(get_query, []).then(result => {
             const processed_res = [];
             const check_dict = {};
+            const category_wise = {};
             for (let i = 0; i < result.length; i++) {
                 const element = result[i];
                 if (!(element.item_name in check_dict)) {
                     check_dict[element.item_name] = 1;
                     processed_res.push(element);
-                }
-                
+                }    
             }
-            res.send(processed_res);
+            processed_res.forEach(element => {
+                if(!(element.category in category_wise)){
+                    category_wise[element.category] = [];
+                }
+                category_wise[element.category].push(element)
+            });
+            res.send(category_wise);
         })
         .catch((err) => {
             console.log(err);
