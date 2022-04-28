@@ -22,6 +22,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { EmployeeComponent } from './employee/employee.component';
 import { AddemployeeComponent } from './addemployee/addemployee.component';
 import { AdditemComponent } from './additem/additem.component';
+import { BooktableComponent } from './booktable/booktable.component';
+import { FreetableComponent } from './freetable/freetable.component';
+import { TablesComponent } from './tables/tables.component';
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import { AdditemComponent } from './additem/additem.component';
     LoginComponent,
     EmployeeComponent,
     AddemployeeComponent,
-    AdditemComponent
+    AdditemComponent,
+    BooktableComponent,
+    FreetableComponent,
+    TablesComponent
   ],
   imports: [
     BrowserModule,

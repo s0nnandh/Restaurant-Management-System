@@ -15,12 +15,7 @@ export class AdditemComponent implements OnInit {
 
   k!: FormArray;
   // ItemForm! : FormGroup;
-  ingrForm = new FormGroup(
-    {
-      ingredient : new FormControl('', [Validators.required]),
-      quantity: new FormControl('', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)])
-    }
-  )
+  // ingrForm = 
 
   ItemForm = new FormGroup(
     { 
@@ -28,12 +23,12 @@ export class AdditemComponent implements OnInit {
       cost: new FormControl('', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
       category: new FormControl('', [Validators.required]),
       isVeg: new FormControl('', [Validators.required]),
-      ingredients: new FormArray([],[Validators.required]),
+      ingredients: new FormArray([]),
     }
   );
 
   constructor() { 
-    // this.addItem();
+    this.addItem();
   }
 
   ngOnInit(): void {
@@ -41,10 +36,21 @@ export class AdditemComponent implements OnInit {
   }
   addItem(){
     this.k = this.ItemForm.get('ingredients') as FormArray;
-    this.k.push(this.ingrForm);
+    this.k.push(new FormGroup(
+      {
+        ingredient : new FormControl('', [Validators.required]),
+        quantity: new FormControl('', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)])
+      }
+    ));
+  }
+
+  iterator(){
+    this.k = this.ItemForm.get('ingredients') as FormArray;
+    return this.k.controls;
   }
 
   newItem(){
+    console.log(this.ItemForm)
     console.log("rAJESH");
   }
 

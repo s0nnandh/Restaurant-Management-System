@@ -7,7 +7,7 @@
     
             <div class="center">
             <div class="login-form">
-                <form [formGroup]="ItemForm" class="form" (ngSubmit)="newItem()">
+                <form [formGroup]="ItemForm" class="form">
 
                     <div class="sign-up-htm">
                         <div class="group">
@@ -49,9 +49,8 @@
                         </div> -->
                         <!-- <div formControlName="ingredients">   -->
                          
-                        <div class="group"  
-                            *ngFor="let item of k.controls; let i = index;">
-                            i  
+                        <div formArrayName="ingredients"  
+                            *ngFor="let item of iterator(); let i = index;">
                             <div [formGroupName]="i">
                                 <td>
                                     <label for="pass" class="label">Ingredient </label>
@@ -65,7 +64,7 @@
                         </div>
                         </div>  
 
-                        <strong> ADD INGREDIENT : </strong><button  class="button" (click)="addItem()">Add Ingredient </button>
+                        <strong> ADD INGREDIENT : </strong><input type="submit" class="button" (click)="addItem()" value="Add Ingredient">
                         <br> 
                         <br>
                         <div class="group">
