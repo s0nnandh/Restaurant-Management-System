@@ -12,6 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class AddemployeeComponent implements OnInit {
 
+  sidenavWidth = 4;
+  ngStyle: string | undefined;
+
   chefForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
     phone_number: new FormControl('', [Validators.required]),
@@ -47,6 +50,15 @@ export class AddemployeeComponent implements OnInit {
     this.chefForm.reset();
     this.waiterForm.reset();
     this.deliverypersonForm.reset();
+  }
+
+  increase() {
+    this.sidenavWidth = 15;
+    console.log('increase sidenav width');
+  }
+  decrease() {
+    this.sidenavWidth = 4;
+    console.log('decrease sidenav width');
   }
 
   addChef(){

@@ -150,3 +150,15 @@ body{
   .mat-table{
     background-color: rgb(196, 214, 218);
   }
+
+  .example-sidenav-content .mat-icon {
+    
+    vertical-align: left;
+    background-color: #6c7b95;
+  }
+
+  .example-sidenav-content {
+    text-align: left;
+    justify-content: left;
+    
+  }

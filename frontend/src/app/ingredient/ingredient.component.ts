@@ -12,6 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class IngredientComponent implements OnInit {
 
+  sidenavWidth = 4;
+  ngStyle: string | undefined;
+
   showaddingre = false;
   ingredients: any;
   ingredientscolumn: any=['id','name','quantity_remaining', 'change_quantity'];
@@ -25,6 +28,15 @@ export class IngredientComponent implements OnInit {
   ngOnInit(): void {
     this.ingreForm.reset();
     this.getIngredients();
+  }
+
+  increase() {
+    this.sidenavWidth = 15;
+    console.log('increase sidenav width');
+  }
+  decrease() {
+    this.sidenavWidth = 4;
+    console.log('decrease sidenav width');
   }
 
   getIngredients(){

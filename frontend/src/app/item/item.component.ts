@@ -9,7 +9,8 @@ import { Router, ActivatedRoute  } from '@angular/router';
 })
 export class ItemComponent implements OnInit {
 
-  
+  sidenavWidth = 4;
+  ngStyle: string | undefined;
 
   constructor(private itemService : ItemService, private router: Router, private activatedroute: ActivatedRoute) { }
 
@@ -17,5 +18,13 @@ export class ItemComponent implements OnInit {
     
   }
 
+  increase() {
+    this.sidenavWidth = 15;
+    console.log('increase sidenav width');
+  }
+  decrease() {
+    this.sidenavWidth = 4;
+    console.log('decrease sidenav width');
+  }
   
 }

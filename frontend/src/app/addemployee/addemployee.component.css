@@ -103,7 +103,7 @@ li a {
 
 ::ng-deep .mat-tab-list .mat-tab-labels  {
     color: rgb(75, 125, 167);
-    background-color: rgb(154, 219, 154);
+    background-color: #3498DB;
     width: 100%;
     
     text-align: center;
@@ -339,4 +339,16 @@ li a {
   
 .field {
     width: 100%;
+}
+
+.example-sidenav-content .mat-icon {
+    
+  vertical-align: left;
+  background-color: #6c7b95;
+}
+
+.example-sidenav-content {
+  text-align: left;
+  justify-content: left;
+  
 }
