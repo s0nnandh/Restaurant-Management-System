@@ -12,8 +12,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import {MatIconModule} from '@angular/material/icon';
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,8 @@ import { LoginComponent } from './login/login.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { EmployeeComponent } from './employee/employee.component';
 import { AddemployeeComponent } from './addemployee/addemployee.component';
+import { IngredientComponent } from './ingredient/ingredient.component';
+import { ItemComponent } from './item/item.component';
 import { AdditemComponent } from './additem/additem.component';
 import { BooktableComponent } from './booktable/booktable.component';
 import { FreetableComponent } from './freetable/freetable.component';
@@ -36,7 +39,10 @@ import { TablesComponent } from './tables/tables.component';
     AdditemComponent,
     BooktableComponent,
     FreetableComponent,
-    TablesComponent
+    TablesComponent,
+    IngredientComponent,
+    ItemComponent,
+    AdditemComponent
   ],
   imports: [
     BrowserModule,
@@ -52,8 +58,10 @@ import { TablesComponent } from './tables/tables.component';
     MatCardModule,
     MatFormFieldModule,
     MatIconModule,
-    MatInputModule
-
+    MatInputModule,
+    MatSidenavModule,
+    MatListModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

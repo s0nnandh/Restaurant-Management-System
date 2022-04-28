@@ -10,6 +10,9 @@ import { Router, ActivatedRoute  } from '@angular/router';
 export class EmployeeComponent implements OnInit {
 
 
+  sidenavWidth = 4;
+  ngStyle: string | undefined;
+
   showchefs =false;
   showwaiters =false;
   showdeliverypersons =false;
@@ -30,6 +33,15 @@ export class EmployeeComponent implements OnInit {
     this.getChefs();
     this.getWaiters();
     this.getDeliveryPersons();
+  }
+
+  increase() {
+    this.sidenavWidth = 15;
+    console.log('increase sidenav width');
+  }
+  decrease() {
+    this.sidenavWidth = 4;
+    console.log('decrease sidenav width');
   }
 
   getChefs() {
@@ -55,7 +67,6 @@ export class EmployeeComponent implements OnInit {
       console.log('delivery persons', this.del_persons);
     });
   }
-
   
 
 }

@@ -1,0 +1,118 @@
+
+<mat-sidenav-container fullscreen>
+    <ul>
+        <li style="float:right"><a class="active" href="/login">Log Out</a></li>
+    </ul>
+
+    <mat-sidenav #sidenav  mode="side" class="example-sidenav" [ngStyle]="{ 'width.em': sidenavWidth }" opened="true" (mouseenter)="increase()"
+      (mouseleave)="decrease()">
+      <div class="logomain"></div>
+      <br>
+      <mat-nav-list>
+        <mat-list-item routerLink="/employee" routerLinkActive="active" >
+          <mat-icon mat-list-icon>person</mat-icon>
+          <div fxFlex="10"></div>
+          <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+            <h5 class="lead">Employees</h5>
+          </div>
+        </mat-list-item>
+  
+        <mat-list-item routerLink="/addemployee" routerLinkActive="active">
+          <mat-icon mat-list-icon>add</mat-icon>
+          <div fxFlex="10"></div>
+          <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+            <h5 class="lead">Add Employee</h5>
+          </div>
+        </mat-list-item>
+  
+        <mat-list-item routerLink="/ingredient" routerLinkActive="active">
+          <mat-icon mat-list-icon>store</mat-icon>
+          <div fxFlex="10"></div>
+          <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+            <h5 class="lead">Ingredients</h5>
+          </div>
+        </mat-list-item>
+  
+        <mat-list-item routerLink="/item" routerLinkActive="active">
+            <mat-icon mat-list-icon>view_list</mat-icon>
+            <div fxFlex="10"></div>
+            <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+              <h5 class="lead">Menu</h5>
+            </div>
+        </mat-list-item>
+    
+        <mat-list-item routerLink="/additem" routerLinkActive="active">
+            <mat-icon mat-list-icon>add</mat-icon>
+            <div fxFlex="10"></div>
+            <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+              <h5 class="lead">Add Item</h5>
+            </div>
+        </mat-list-item>
+  
+      </mat-nav-list>
+  
+    </mat-sidenav>
+  
+    
+    <div class="example-sidenav-content">
+        <mat-icon (click)="sidenav.toggle()" class="sidenav-menu" >menu</mat-icon>
+    </div>
+  
+  
+
+
+<br> <br>
+
+<div class="dropdown">
+    <button  (click)="showaddingre = !showaddingre"  class="dropbtn">Add Ingredient</button>
+
+    <form [formGroup]="ingreForm" class="form" (ngSubmit)="addIngredient()" [hidden]="!showaddingre">
+    
+        <div class="sign-up-htm">
+            <div class="group">
+                <label for="user" class="label">Name</label>
+                <input id="user" type="text" class="input" formControlName="name">
+            </div>
+            
+            <div class="group">
+                <input type="submit" class="button" [disabled]="!ingreForm.valid" value="Add">
+            </div>
+            
+        </div>
+    </form>
+
+</div>
+
+<br><br>
+
+<div  *ngIf="ingredients" allign="center">
+            
+    <table mat-table [dataSource]="ingredients" class="mat-elevation-z8" width="90%" >
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef class="table-header"> Id </th>
+            <td mat-cell *matCellDef="let ingredient">  {{ingredient.ingredient_id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef class="table-header"> Name </th>
+            <td mat-cell *matCellDef="let ingredient"> {{ingredient.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="quantity_remaining">
+            <th mat-header-cell *matHeaderCellDef class="table-header"> Quantity In Store </th>
+            <td mat-cell *matCellDef="let ingredient"> {{ingredient.quantity_remaining}} </td>
+        </ng-container>
+        <ng-container matColumnDef="change_quantity">
+            <th mat-header-cell *matHeaderCellDef class="table-header">  </th>
+            <td mat-cell *matCellDef="let ingredient"> update </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="ingredientscolumn"></tr>
+        <tr mat-row *matRowDef="let row; columns: ingredientscolumn;"></tr>
+    </table>
+
+</div>
+
+<br> <br>
+
+</mat-sidenav-container>
+
+<router-outlet></router-outlet> 
+

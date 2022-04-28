@@ -67,7 +67,7 @@ body{
     font-size: 16px;
     border: none;
     cursor: pointer;
-    width: 90%;
+    width: 10%;
   }
   
   /* Dropdown button on hover & focus */
@@ -126,6 +126,25 @@ body{
       position: sticky;
       z-index: 1;
       background-color: inherit;
+  }
+
+  /* .mat-table{
+    background-color: beige;
+  } */
+
+  .sign-up-htm .group .label {
+  
+  color: #0c0609;
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:rgba(255,255,255,.1);
+  }
+
+  .group .button:disabled {
+    background-color: rgb(218, 211, 211);
+    color: #aaa;
+    cursor: auto;
   }
 
   .mat-table{
