@@ -19,8 +19,18 @@ module.exports = {
             console.log(err);
             return next(err);
         });
-    }
+    },
 
+    addIngredient: function(req, res, next){
+        const insert_query = `insert into ingredient(name) values ($1) returning ingredient_id;`;
+        db.one(insert_query, [req.body.name]).then(result => {
+            res.send(result);
+        })
+        .catch((err) => {
+            console.log(err);
+            return next(err);
+        })
+    },
     
 
 
