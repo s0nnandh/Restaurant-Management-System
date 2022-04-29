@@ -22,6 +22,16 @@ module.exports = {
             console.log(err);
             return next(err);
         });
+    },
+
+    markCompleted: function(req, res, next){
+        const query = `update order_ set status = 'Completed' where order_id = $1;`
+        db.any(query, [req.body.order_id]).then(result => {
+            res.send(result);
+        }).catch((err) => {
+            console.log(err);
+            return next(err);
+        });
     }
 
 }

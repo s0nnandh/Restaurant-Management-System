@@ -37,7 +37,6 @@ module.exports = app => {
     app.get('/api/order/get_online_orders', orderService.getOnlineOrders);
     app.get('/api/order/get_order_items/:order_id', orderService.getOrderItems);
     app.post('/api/order/place_order', upload.none(), orderService.placeOrder);
-    // app.post('/api/order/mark_completed', upload.none(), orderService.markCompleted);
 
     app.get('/api/table/free_tables', tableService.getFreetables);
     app.get('/api/table/booked_tables', tableService.getBookedtables);
@@ -54,5 +53,5 @@ module.exports = app => {
 
     app.post('/api/manager/assign_chef', upload.none(), managerService.assignOrderToChef);
     app.post('/api/manager/assign_delivery_person', upload.none(), managerService.assignOrderToChef);
-
+    app.post('/api/manager/mark_completed', upload.none(), managerService.markCompleted);
 };
