@@ -1,5 +1,7 @@
+import { createMayBeForwardRefExpression } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
+import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../data.service';
 
 
@@ -15,6 +17,22 @@ export interface category_item{
     category : string,
     item : Item
 };
+
+export interface MyItem{
+  item_id : string,
+  quantity : number
+}
+
+export interface MyOrder{
+  total_cost : number,
+  payment_method : string,
+  order_mode : string,
+  table_id : number,
+  placing_time : string,
+  customer_id : number,
+  order_date : string,
+  order_items : MyItem[]
+}
 
 
 
@@ -35,17 +53,31 @@ export class OrderComponent implements OnInit {
 
   cnt : number = -1;
 
+  customer_id : number = -1;
+
+  table_id : number = -1;
+
+  payment_method! : string;
+
   readonly URL;
+
+  readonly postUrl;
 
   sidenavWidth = 4;
   ngStyle: string | undefined;
 
-  constructor(private dataService : DataService) { 
+  constructor(private dataService : DataService, private route : ActivatedRoute) { 
     this.URL = 'api/item/item_info';
+    this.postUrl = 'api/order/place_order';
   }
 
   ngOnInit(): void {
+    console.log('date',(new Date()).getMinutes().toString());
     if(sessionStorage.getItem("role") != null) this.role = sessionStorage.getItem("role");
+    if(sessionStorage.getItem("id") != null) this.customer_id = Number(sessionStorage.getItem("id"));
+    // this.table_id = Number(this.route.snapshot.paramMap.get("id"));
+    if(sessionStorage.getItem("table_id") != null)this.table_id = Number(sessionStorage.getItem("table_id"));
+    else this.table_id = -1;
     this.getData()
 
   }
@@ -106,4 +138,41 @@ export class OrderComponent implements OnInit {
     this.sidenavWidth = 15;
     console.log('increase sidenav width');
   }
+
+  PlaceOrder(){
+    var x = new Date();
+    var ord;
+    if(this.table_id == -1)ord = 'Online';
+    else ord = 'Offline';
+    let myitems : MyItem[] = [];
+    for(let x in this.items){
+      for(let y in this.items[x]){
+        if(this.items[x][y].quantity > 0){
+          myitems.push({
+            item_id : this.items[x][y].name,
+            quantity : this.items[x][y].quantity
+          })
+        }
+      }
+    }
+    let a : MyOrder = {
+      customer_id : this.customer_id,
+      total_cost : this.total,
+      table_id : this.table_id,
+      order_mode : ord,    
+      placing_time : x.getHours().toString() + ":" + x.getMinutes().toString() + ":" + x.getSeconds().toString(),
+      order_date : x.getFullYear() + "-" + x.getMonth().toString() + "-" + x.getDate().toString(),
+      order_items : myitems,
+      payment_method : this.payment_method
+    }
+    console.log(a)
+
+    this.dataService.post(this.postUrl,a).subscribe(
+      (res) => {
+        console.log(res);
+      }
+    );
+    
+  }
+
 }
