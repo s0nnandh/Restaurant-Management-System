@@ -19,12 +19,20 @@ export class ChefComponent implements OnInit {
   show_orders : boolean[] = [];
 
   id! : number;
+  readonly URL;
 
-  constructor(private EmployeeService : EmployeeService, private router: Router, private activatedroute: ActivatedRoute) { }
+  readonly postUrl;
+
+  constructor(private dataService : DataService, private router: Router, private activatedroute: ActivatedRoute) { 
+    this.id = Number(this.activatedroute.snapshot.paramMap.get('id'));
+    this.URL = '/api/chef/get_chef_items/'+Number(this.id).toString();
+    this.postUrl = '/api/chef/change_chef_order';
+  }
 
   ngOnInit(): void {
     if(sessionStorage.getItem("role") != null) this.role = sessionStorage.getItem("role");
     this.getData();
+    this.getChefs();
     this.id = Number(this.activatedroute.snapshot.paramMap.get('id'));
     console.log('id',this.id)
   }
@@ -39,7 +47,8 @@ export class ChefComponent implements OnInit {
     this.show_orders.push(false);
   }
   getChefs(){
-    this.EmployeeService.getChefs().pipe().subscribe((d :any) => {
+
+    this.dataService.get(this.URL).pipe().subscribe((d :any) => {
         console.log('Chefs',d);
     });
   }
