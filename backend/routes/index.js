@@ -23,6 +23,8 @@ module.exports = app => {
     app.get('/api/employee/chef_info', employeeService.getChefs);
     app.get('/api/employee/waiter_info', employeeService.getWaiters);
     app.get('/api/employee/delivery_person_info', employeeService.getDeliveryPersons);
+    app.get('/api/employee/chef_names', employeeService.getChefNames);
+    app.get('/api/employee/delivery_person_names', employeeService.getDeliveryPersonNames);
 
     app.post('/api/ingredient/add_ingredient', upload.none(), ingredientService.addIngredient);
     app.get('/api/ingredient/ingredient_info', ingredientService.getIngredients);
@@ -35,6 +37,7 @@ module.exports = app => {
     app.get('/api/order/get_online_orders', orderService.getOnlineOrders);
     app.get('/api/order/get_order_items/:order_id', orderService.getOrderItems);
     app.post('/api/order/place_order', upload.none(), orderService.placeOrder);
+    // app.post('/api/order/mark_completed', upload.none(), orderService.markCompleted);
 
     app.get('/api/table/free_tables', tableService.getFreetables);
     app.get('/api/table/booked_tables', tableService.getBookedtables);
@@ -46,7 +49,7 @@ module.exports = app => {
     app.get('/api/delivery_person/get_dp_items/:delivery_person_id', deliveryService.getDeliveryPersonOrders);
     app.post('/api/delivery_person/change_dp_order', deliveryService.changeDeliveryPersonOrderStatus);
 
-    app.get('/api/analytics/top_dishes_by_dow', analyticsService.topItemsByDayOfWeek);
+    app.get('/api/analytics/top_dishes_by_dow', analyticsService.popularItemsByDayOfWeek);
     app.get('/api/analytics/rush_hours', analyticsService.rushHours);
 
     app.post('/api/manager/assign_chef', upload.none(), managerService.assignOrderToChef);

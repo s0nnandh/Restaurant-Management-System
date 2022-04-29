@@ -152,5 +152,29 @@ module.exports = {
             console.log(err);
             return next(err);
         });
+    },
+
+    getChefNames: function(req, res, next){
+        const get_query = `select c.id, c.name from chef as b, person as c where c.id = b.id;`;
+        
+        db.any(get_query, []).then(result => {
+            res.send(result);
+        })
+        .catch((err) => {
+            console.log(err);
+            return next(err);
+        });
+    },
+
+    getDeliveryPersonNames: function(req, res, next){
+        const get_query = `select c.id, c.name from delivery_person as b, person as c where c.id = b.id;`;
+        
+        db.any(get_query, []).then(result => {
+            res.send(result);
+        })
+        .catch((err) => {
+            console.log(err);
+            return next(err);
+        });
     }
 };

@@ -3,7 +3,7 @@ const url = require("url");
 const db = require( path.resolve( __dirname, "./index.js" ) );
 
 module.exports = {
-    topItemsByDayOfWeek: function(req, res, next) {
+    popularItemsByDayOfWeek: function(req, res, next) {
         day = req.query.day;
         limit = req.query.limit;
         query = `with 
