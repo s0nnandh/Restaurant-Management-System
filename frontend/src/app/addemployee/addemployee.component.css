@@ -352,3 +352,17 @@ li a {
   justify-content: left;
   
 }
+.bg-img {
+  /* The image used */
+  background-image: url('../../assets/employee.jpg');
+  /* filter: blur(8px);
+  -webkit-filter: blur(8px); */
+  /* Control the height of the image */
+  min-height: 100%;
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  }

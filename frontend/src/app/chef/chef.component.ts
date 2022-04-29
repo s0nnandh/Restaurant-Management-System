@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute  } from '@angular/router';
 import { DataService } from '../data.service';
+import { EmployeeService } from '../employee.service';
 
 
 
@@ -19,7 +20,7 @@ export class ChefComponent implements OnInit {
 
   id! : number;
 
-  constructor(private dataService : DataService, private router: Router, private activatedroute: ActivatedRoute) { }
+  constructor(private EmployeeService : EmployeeService, private router: Router, private activatedroute: ActivatedRoute) { }
 
   ngOnInit(): void {
     if(sessionStorage.getItem("role") != null) this.role = sessionStorage.getItem("role");
@@ -36,6 +37,11 @@ export class ChefComponent implements OnInit {
     this.orders.push(3);
     this.show_orders.push(false);
     this.show_orders.push(false);
+  }
+  getChefs(){
+    this.EmployeeService.getChefs().pipe().subscribe((d :any) => {
+        console.log('Chefs',d);
+    });
   }
 
   Done(order : number){
