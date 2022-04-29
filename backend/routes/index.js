@@ -48,8 +48,9 @@ module.exports = app => {
     app.get('/api/delivery_person/get_dp_items/:delivery_person_id', deliveryService.getDeliveryPersonOrders);
     app.post('/api/delivery_person/change_dp_order', deliveryService.changeDeliveryPersonOrderStatus);
 
-    app.get('/api/analytics/top_dishes_by_dow', analyticsService.popularItemsByDayOfWeek);
+    app.get('/api/analytics/popular_dishes_by_dow', analyticsService.popularItemsByDayOfWeek);
     app.get('/api/analytics/rush_hours', analyticsService.rushHours);
+    app.get('/api/analytics/popular_dishes_by_ingredient', analyticsService.popularItemsByIngredients);
 
     app.post('/api/manager/assign_chef', upload.none(), managerService.assignOrderToChef);
     app.post('/api/manager/assign_delivery_person', upload.none(), managerService.assignOrderToChef);

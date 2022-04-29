@@ -45,6 +45,20 @@ module.exports = {
             console.log(err);
             return next(err);
         });
+    },
+
+    popularItemsByIngredients: function(req, res, next){
+        query = `with 
+        item_popularity as (select item_id, sum(item_quantity) as ordered_quantity 
+                            from order_items group by item_id )
+        select item_id, item_name, ordered_quantity from item_popularity natural join required_ natural join item
+        where ingredient_id  = $1 order by ordered_quantity desc limit $2;`;
+        db.any(query, [req.query.ingredient_id, req.query.limit]).then(result => {
+            res.send(result);
+        }).catch((err) => {
+            console.log(err);
+            return next(err);
+        });
     }
 
 };
