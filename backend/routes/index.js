@@ -6,11 +6,13 @@ const employeeService = require( path.resolve( __dirname, "../controllers/employ
 const itemService = require( path.resolve( __dirname, "../controllers/item.controller.js" ) );
 const ingredientService = require( path.resolve( __dirname, "../controllers/ingredient.controller.js" ) );
 const orderService = require( path.resolve( __dirname, "../controllers/order.controller.js" ) );
+const tableService = require( path.resolve( __dirname, "../controllers/table.controller.js" ) );
 
 
 module.exports = app => {
 
     app.post('/api/auth/login', upload.none(), authService.login);
+    app.post('/api/auth/register', upload.none(), authService.addCustomer);
 
     app.post('/api/employee/add_chef', upload.none(), employeeService.addChef);
     app.post('/api/employee/add_waiter', upload.none(), employeeService.addWaiter);

@@ -6,9 +6,8 @@ import { AddemployeeComponent } from './addemployee/addemployee.component';
 import { IngredientComponent } from './ingredient/ingredient.component';
 import { ItemComponent } from './item/item.component';
 import { AdditemComponent } from './additem/additem.component';
-import { BooktableComponent } from './booktable/booktable.component';
-import { FreetableComponent } from './freetable/freetable.component';
 import { TablesComponent } from './tables/tables.component';
+import { OrderComponent } from './order/order.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -19,6 +18,7 @@ const routes: Routes = [
   {path : 'item',component:ItemComponent},
   {path : 'additem',component:AdditemComponent},
   { path : 'tables', component : TablesComponent},
+  { path : 'order', component : OrderComponent},
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
