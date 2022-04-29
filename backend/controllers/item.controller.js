@@ -12,7 +12,7 @@ module.exports = {
         main_ingredient(item_id, ingredient_id) as 
         (select a. item_id, a.ingredient_id from required_ as a, item_max_quantity as b 
         where a.item_id = b.item_id and a.quantity=b.max_quantity) 
-        select a.item_name, c.name, a.category, a.is_veg, a.cost, a.availability from item as a,
+        select a.item_id, a.item_name, c.name, a.category, a.is_veg, a.cost, a.availability from item as a,
         main_ingredient as b , ingredient as c where a.item_id = b.item_id and b.ingredient_id=c.ingredient_id 
         order by a.category, a.item_name, c.name;`;
         
@@ -42,6 +42,7 @@ module.exports = {
                 x["items"]=category_wise[item_cat[i]];
                 li.push(x);
             }
+            console.log(li)
             res.send(li);
         })
         .catch((err) => {
@@ -104,7 +105,7 @@ module.exports = {
             });
             db.tx(t => {
                 const queries = ingredient_ids.map(l => {
-                    return t.none(`insert into required_(item_id, ingredient_id, quantity) values (${item_id}, ${ingredient_id}, ${quantity});`, l);
+                    return t.none(`insert into required_(item_id, ingredient_id, quantity) values (${l.item_id}, ${l.ingredient_id}, ${l.quantity});`, l);
                 });
                 return t.batch(queries);
             })
