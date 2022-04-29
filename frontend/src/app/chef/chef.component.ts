@@ -33,6 +33,7 @@ export class ChefComponent implements OnInit {
     this.show_orders = [];
     this.orders.push(1);
     this.orders.push(2);
+    this.orders.push(3);
     this.show_orders.push(false);
     this.show_orders.push(false);
   }

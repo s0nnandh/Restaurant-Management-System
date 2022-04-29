@@ -3,4 +3,28 @@
     <li style="float:right"><a class="active" href="/login">Log Out</a></li>
 </ul>
 
-<p>deliveryperson works!</p>
+<div class="center"><h1> Accepted Orders 
+  
+</h1></div>
+
+<div class="container" *ngFor="let order of orders; let i = index">
+    <div class="dropdown">
+        <button  (click)="show_orders[i] = !show_orders[i];"  class="dropbtn">{{ order }} </button>
+        <!-- <div  *ngIf="offline_items[i]" class="vertical"> -->
+            
+            <!-- <table mat-table [dataSource]="offline_items[i]" class="mat-elevation-z8" width="100%" [hidden]="!offline_show_items[i]">
+                <ng-container matColumnDef="Item">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Item </th>
+                    <td mat-cell *matCellDef="let waiter">  {{waiter.id}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Quantity">
+                    <th mat-header-cell *matHeaderCellDef class="table-header"> Quantity </th>
+                    <td mat-cell *matCellDef="let waiter"> {{waiter.quantity}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
+            </table> -->
+            <div [hidden]="!show_orders[i]" ><button [hidden]="!show_orders[i]" (click)="Done(order)" > Mark as Delivered </button></div>
+        <!-- </div> -->
+    </div>
+    </div>
