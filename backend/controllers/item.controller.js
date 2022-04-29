@@ -53,58 +53,18 @@ module.exports = {
 
     addItem: function(req, res, next) {
         const ingredients = req.body.item_ingredients
-        insert_query_1 = `insert into ingredient(name) values ($1) returning ingredient_id;`;
-        get_query = `select * from ingredient where name = $1`;
         insert_query_2 = ` insert into item(item_name, category, cost, availability, is_veg) 
         values ($1, $2, $3, $4, $5) returning item_id;`;
-        // insert_query_3 = `insert into required_(item_id, ingredient_id, quantity) values ($1, $2, $3);`;
 
         const values_2 = [req.body.name, req.body.category, req.body.cost, 
                         req.body.availability, req.body.is_veg];
-        const ingredient_ids = [];
-        ingredients.forEach(element => {
-            db.any(get_query, [element.ingredient]).then(result => {
-                if(result.length != 0){
-                    ingredient_ids.push({
-                        ingredient_id : result.ingredient_id,
-                        quantity: element.quantity
-                    });
-                }else{
-                    db.one(insert_query_1, [element.ingredient]).then(result2 => {
-                        ingredient_ids.push({
-                            ingredient_id : result2.ingredient_id,
-                            quantity: element.quantity
-                        });
-                    })
-                    .catch((err) => {
-                        console.log(err);
-                        return next(err);
-                    })
-                } 
-            })
-            .catch((err) => {
-                console.log(err);
-                return next(err);
-            });
-            
-        });
-
+        
         db.one(insert_query_2, values_2).then(result => {
-            // db.tx(t => {
-            //     ingredient_ids.forEach(element => {
-            //         db.none(insert_query_3, [result.item_id, element.ingredient_id, element.quantity])
-            //     });
-                
-            // })
-            ingredient_ids.forEach(elem => {
-                elem = {
-                    item_id: result.item_id,
-                    ingredient_id : elem.ingredient_id,
-                    quantity: elem.quantity
-                }
+            ingredients.forEach(elem => {
+                elem["item_id"] = result.item_id;
             });
             db.tx(t => {
-                const queries = ingredient_ids.map(l => {
+                const queries = ingredients.map(l => {
                     return t.none(`insert into required_(item_id, ingredient_id, quantity) values (${l.item_id}, ${l.ingredient_id}, ${l.quantity});`, l);
                 });
                 return t.batch(queries);
@@ -114,7 +74,7 @@ module.exports = {
                     // data = array of "NULL"-s
                     res.send(result);
                 })
-                .catch(error => {
+                .catch(err => {
                     res.sendStatus(500);
                     console.log(err);
                     return next(err);

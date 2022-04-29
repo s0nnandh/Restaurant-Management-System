@@ -30,6 +30,7 @@ module.exports = app => {
     app.post('/api/item/add_item', upload.none(), itemService.addItem);
     app.get('/api/item/item_info', itemService.getItems);
 
+    app.get('/api/order/get_all_orders', orderService.getOrders);
     app.get('/api/order/get_offline_orders', orderService.getOfflineOrders);
     app.get('/api/order/get_online_orders', orderService.getOnlineOrders);
     app.get('/api/order/get_order_items/:order_id', orderService.getOrderItems);
