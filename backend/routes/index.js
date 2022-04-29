@@ -8,6 +8,7 @@ const ingredientService = require( path.resolve( __dirname, "../controllers/ingr
 const orderService = require( path.resolve( __dirname, "../controllers/order.controller.js" ) );
 const tableService = require( path.resolve( __dirname, "../controllers/table.controller.js" ) );
 const analyticsService = require( path.resolve( __dirname, "../controllers/analytics.controller.js" ) );
+const managerService = require( path.resolve( __dirname, "../controllers/manager.controller.js" ) );
 
 module.exports = app => {
 
@@ -38,4 +39,8 @@ module.exports = app => {
 
     app.get('/api/analytics/top_dishes_by_dow', analyticsService.topItemsByDayOfWeek);
     app.get('/api/analytics/rush_hours', analyticsService.rushHours);
+
+    app.post('/api/manager/assign_chef', upload.none(), managerService.assignOrderToChef);
+    app.post('/api/manager/assign_delivery_person', upload.none(), managerService.assignOrderToChef);
+
 };
