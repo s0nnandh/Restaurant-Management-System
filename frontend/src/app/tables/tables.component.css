@@ -114,3 +114,16 @@ mat-header-cell, mat-header-row, .mat-header-cell-def{
     display: flex;
     justify-content: center;
   }
+  .bg-img {
+    /* The image used */
+    background-image: url('../../assets/tables.jpg');
+    
+    /* Control the height of the image */
+    min-height: 100%;
+    
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    }

@@ -2,9 +2,13 @@
     
 
     <mat-sidenav-container fullscreen>
+
         <ul>
-            <li style="float:right"><a class="active" href="/login">Log Out</a></li>
+          <li style="float:right"><a class="active" href="/login">Log Out</a></li>
+
+          <li style="float:right"><a class="active" href="/addemployee">Add Employee</a></li>
         </ul>
+
 
         <mat-sidenav #sidenav  mode="side" class="example-sidenav" [ngStyle]="{ 'width.em': sidenavWidth }" opened="true" (mouseenter)="increase()"
           (mouseleave)="decrease()" >
@@ -87,16 +91,16 @@
       
         </mat-sidenav>
       
-        
         <div class="example-sidenav-content">
-            <mat-icon (click)="sidenav.toggle()" class="sidenav-menu" >menu</mat-icon>
-        </div>
-      
-      
+          <mat-icon (click)="sidenav.toggle()" class="sidenav-menu" >menu</mat-icon>
+          <br>
+      </div>
+      <br>      
 
+<div class="bg-img">
 
-
-<br> <br>
+<div class="card-container">
+  <br>
     <div class="dropdown">
         <button  (click)="showchefs = !showchefs"  class="dropbtn">Chefs</button>
         <div *ngIf="chefs" allign="center">
@@ -188,11 +192,9 @@
         </div>
     </div>
 
-    <br> <br>
-    <div>
-        <button class="button" routerLink="/addemployee"> Add Employee </button>
-    </div>
+</div>
 
+</div>
 </mat-sidenav-container>
 
 <router-outlet></router-outlet> 

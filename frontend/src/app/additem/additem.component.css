@@ -177,7 +177,7 @@ margin-bottom:15px;
 .login-form .group .label,
 .login-form .group .input,
 .login-form .group .button{
-width:100%;
+width:80%;
 color:#fff;
   font-weight: 600;
 display:block;
@@ -352,3 +352,21 @@ text-align: left;
 justify-content: left;
 
 }
+.bg-img {
+  /* The image used */
+  background-image: url('../../assets/item.jpg');
+  /* filter: blur(8px);
+  -webkit-filter: blur(8px); */
+  /* Control the height of the image */
+  min-height: 100%;
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  }
+  H2{
+    color: rgb(33, 198, 198);
+
+  }

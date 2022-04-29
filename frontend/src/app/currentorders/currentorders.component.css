@@ -1,5 +1,5 @@
 
-  .li a {
+  li a {
     display: block;
     color: white;
     text-align: center;
@@ -7,14 +7,14 @@
     text-decoration: none;
   }
   
-  .li a:hover:not(.active) {
+  li a:hover:not(.active) {
     background-color: #111;
   }
   
   .active {
     background-color: #04AA6D;
   }
-  .ul {
+  ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -143,9 +143,17 @@ body{
     justify-content: left;
     
   }
-
-  .vertical { 
-    /* background-color: yellow;  */
-    display: block;
+  .bg-img {
+    /* The image used */
+    background-image: url('../../assets/employee.jpg');
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    /* Control the height of the image */
+    min-height: 100%;
     
-}
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    }
