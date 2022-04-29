@@ -10,7 +10,8 @@ export interface Item{
   id2  : number,
   name : string,
   price : number,
-  quantity : number
+  quantity : number,
+  item_name : string
 };
 
 export interface category_item{
@@ -107,7 +108,8 @@ export class OrderComponent implements OnInit {
                 id2 : this.cnt,
                 name : res[x].items[y].item_id,
                 price : Number(res[x].items[y].cost),
-                quantity : 0
+                quantity : 0,
+                item_name : res[x].items[y].item_name
               }
             )
           }

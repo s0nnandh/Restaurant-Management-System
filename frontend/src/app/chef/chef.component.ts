@@ -25,7 +25,7 @@ export class ChefComponent implements OnInit {
 
   constructor(private dataService : DataService, private router: Router, private activatedroute: ActivatedRoute) { 
     this.id = Number(this.activatedroute.snapshot.paramMap.get('id'));
-    this.URL = '/api/chef/get_chef_items/'+Number(this.id).toString();
+    this.URL = 'api/chef/get_chef_items/'+Number(this.id).toString();
     this.postUrl = '/api/chef/change_chef_order';
   }
 

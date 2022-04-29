@@ -26,7 +26,7 @@ const routes: Routes = [
   { path : 'current', component : CurrentordersComponent},
   { path : 'analytics', component : AnalyticsComponent},
   { path : 'chef/:id', component : ChefComponent },
-  { path : 'deliveryperson/:id', component : DeliverypersonComponent },
+  { path : 'delivery/:id', component : DeliverypersonComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
