@@ -30,8 +30,11 @@ module.exports = app => {
     app.get('/api/order/get_offline_orders', orderService.getOfflineOrders);
     app.get('/api/order/get_online_orders', orderService.getOnlineOrders);
     app.get('/api/order/get_order_items/:order_id', orderService.getOrderItems);
+    app.post('/api/order/place_order', upload.none(), orderService.placeOrder);
 
     app.get('/api/table/free_tables', tableService.getFreetables);
     app.get('/api/table/booked_tables', tableService.getBookedtables);
     app.get('/api/table/:table_id', tableService.getTabledetails);
+
+    app.get('/api/analytics/top_dishes_by_dow', analyticsService.topItemsByDayOfWeek)
 };
