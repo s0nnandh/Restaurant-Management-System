@@ -18,4 +18,8 @@ export class DataService {
 
   }
 
+  post(uri : string,data : any){
+    return this.http.post<Map<string,string>[]>(`${this.URL}/${uri}`,data);
+  }
+
 }

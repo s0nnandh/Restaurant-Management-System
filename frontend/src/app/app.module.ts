@@ -36,6 +36,8 @@ import { CurrentordersComponent } from './currentorders/currentorders.component'
 import { ChefComponent } from './chef/chef.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { DeliverypersonComponent } from './deliveryperson/deliveryperson.component';
+import {MatSelectModule} from '@angular/material/select';
+
 
 
 @NgModule({
@@ -77,7 +79,7 @@ import { DeliverypersonComponent } from './deliveryperson/deliveryperson.compone
     MatDialogModule,    
     MatExpansionModule,
     MatSlideToggleModule,
-
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
