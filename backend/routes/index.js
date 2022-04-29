@@ -7,7 +7,10 @@ const itemService = require( path.resolve( __dirname, "../controllers/item.contr
 const ingredientService = require( path.resolve( __dirname, "../controllers/ingredient.controller.js" ) );
 const orderService = require( path.resolve( __dirname, "../controllers/order.controller.js" ) );
 const tableService = require( path.resolve( __dirname, "../controllers/table.controller.js" ) );
+const chefService = require( path.resolve( __dirname, "../controllers/chef.controller.js" ) );
+const deliveryService = require( path.resolve( __dirname, "../controllers/delivery_person.controller.js" ) );
 const analyticsService = require( path.resolve( __dirname, "../controllers/analytics.controller.js" ) );
+const managerService = require( path.resolve( __dirname, "../controllers/manager.controller.js" ) );
 
 module.exports = app => {
 
@@ -36,6 +39,16 @@ module.exports = app => {
     app.get('/api/table/booked_tables', tableService.getBookedtables);
     app.get('/api/table/:table_id', tableService.getTabledetails);
 
+    app.get('/api/chef/get_chef_items/:chef_id', chefService.getChefOrders);
+    app.post('/api/chef/change_chef_order', chefService.changeChefOrderStatus);
+
+    app.get('/api/delivery_person/get_dp_items/:delivery_person_id', deliveryService.getDeliveryPersonOrders);
+    app.post('/api/delivery_person/change_dp_order', deliveryService.changeDeliveryPersonOrderStatus);
+
     app.get('/api/analytics/top_dishes_by_dow', analyticsService.topItemsByDayOfWeek);
     app.get('/api/analytics/rush_hours', analyticsService.rushHours);
+
+    app.post('/api/manager/assign_chef', upload.none(), managerService.assignOrderToChef);
+    app.post('/api/manager/assign_delivery_person', upload.none(), managerService.assignOrderToChef);
+
 };

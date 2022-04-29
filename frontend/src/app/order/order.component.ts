@@ -105,7 +105,7 @@ export class OrderComponent implements OnInit {
             this.items[Number(x)].push({
                 id1 : Number(x),
                 id2 : this.cnt,
-                name : res[x].items[y].item_name,
+                name : res[x].items[y].item_id,
                 price : Number(res[x].items[y].cost),
                 quantity : 0
               }

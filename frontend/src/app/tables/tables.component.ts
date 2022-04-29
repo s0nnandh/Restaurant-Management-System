@@ -8,7 +8,8 @@ import { FreetableComponent } from '../freetable/freetable.component';
 
 
 export interface BookData {
-  table_id : number
+  table_id : number,
+  occupancy : number
 }
 
 export interface FreeData {
@@ -33,12 +34,15 @@ export class TablesComponent implements OnInit {
   freeTables : Table[] = [];
   busyTables : Table[] = [];
 
-
-  
+  readonly freeUrl;
+  readonly busyUrl ;
 
   displayedColumns: string[] = ['position', 'id'];
 
-  constructor(private dataService : DataService, private router: Router, private activatedroute:ActivatedRoute, public dialog : MatDialog) { }
+  constructor(private dataService : DataService, private router: Router, private activatedroute:ActivatedRoute, public dialog : MatDialog) {
+    this.freeUrl = 'api/table/free_tables';
+    this.busyUrl = 'api/table/booked_tables';
+   }
 
   ngOnInit(): void {
     if(sessionStorage.getItem("role") != null) this.role = sessionStorage.getItem("role");
@@ -55,8 +59,42 @@ export class TablesComponent implements OnInit {
   }
 
   getData(){
-    this.freeTables.push(new Table(1,1));
-    this.busyTables.push(new Table(1,2));
+    // this.freeTables.push(new Table(1,1));
+    this.dataService.get(this.freeUrl).pipe().subscribe(
+      (res : any) => {
+        // console.log(res);
+        for(let x in res){
+          console.log(res[x])
+          this.freeTables.push({
+            position : Number(x),
+            id : Number(res[x].table_id),
+            capacity : Number(res[x].capacity)
+          });
+        }
+        console.log('hhello',this.freeTables.length);
+      }
+    )
+    
+    this.dataService.get(this.busyUrl).pipe().subscribe(
+      (res : any) => {
+        // console.log(res);
+        for(let x in res){
+          console.log(res[x])
+          this.busyTables.push({
+            position : Number(x),
+            id : Number(res[x].table_id),
+            capacity : Number(res[x].capacity)
+          });
+        }
+        console.log('hhello',this.busyTables.length);
+      }
+    )
+
+    // for(let x in this.freeTables){
+    //   console.log('damn',x)
+    //   console.log(this.freeTables[x])
+    // }
+    // this.busyTables.push(new Table(1,2,1));
      // make an api call to get Tables 
   }
 
@@ -67,7 +105,8 @@ export class TablesComponent implements OnInit {
       {
         width : '800px',
         data : {
-          table_id : row.id
+          table_id : row.id,
+          occupancy : row.capacity
         }
       }
     );
