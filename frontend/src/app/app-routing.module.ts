@@ -8,6 +8,8 @@ import { ItemComponent } from './item/item.component';
 import { AdditemComponent } from './additem/additem.component';
 import { TablesComponent } from './tables/tables.component';
 import { OrderComponent } from './order/order.component';
+import { CurrentordersComponent } from './currentorders/currentorders.component';
+import { ChefComponent } from './chef/chef.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -19,6 +21,8 @@ const routes: Routes = [
   {path : 'additem',component:AdditemComponent},
   { path : 'tables', component : TablesComponent},
   { path : 'order', component : OrderComponent},
+  { path : 'current', component : CurrentordersComponent},
+  { path : 'chef/:id', component : ChefComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
