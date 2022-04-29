@@ -9,7 +9,7 @@ export class DataService {
   readonly URL;
 
   constructor(private http : HttpClient) { 
-    this.URL = 'http://localhost:3000';
+    this.URL = 'http://localhost:8000';
   }
 
   get(uri : string){

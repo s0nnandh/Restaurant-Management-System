@@ -31,6 +31,7 @@ import { BooktableComponent } from './booktable/booktable.component';
 import { FreetableComponent } from './freetable/freetable.component';
 import { TablesComponent } from './tables/tables.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { OrderComponent } from './order/order.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     TablesComponent,
     IngredientComponent,
     ItemComponent,
-    AdditemComponent
+    AdditemComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

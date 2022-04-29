@@ -31,6 +31,7 @@ export class BooktableComponent implements OnInit {
 
   addOrder(){
     console.log("Order Works");
+    this.router.navigate(['/order']);
   }
 
 }

@@ -3,7 +3,7 @@
     Occupancy : {{ occupancy }}
 </div>
 <div mat-dialog-actions>
-    <button mat-button (click)="addOrder()">Make an Order</button>
+    <button mat-button mat-dialog-close (click)="addOrder()">Make an Order</button>
     <button mat-button mat-dialog-close cdkFocusInitial>Close</button>
 </div>
 <!-- <strong> Make a Order</strong><input type="submit" class="button" (click)="addOrder()" value="Order"> -->
