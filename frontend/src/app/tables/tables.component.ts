@@ -25,8 +25,14 @@ export interface FreeData {
 
 export class TablesComponent implements OnInit {
 
+  role !: string | null;
+
+  sidenavWidth = 4;
+  ngStyle: string | undefined;
+
   freeTables : Table[] = [];
   busyTables : Table[] = [];
+
 
   
 
@@ -35,7 +41,17 @@ export class TablesComponent implements OnInit {
   constructor(private dataService : DataService, private router: Router, private activatedroute:ActivatedRoute, public dialog : MatDialog) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem("role") != null) this.role = sessionStorage.getItem("role");
     this.getData();
+  }
+
+  increase() {
+    this.sidenavWidth = 15;
+    console.log('increase sidenav width');
+  }
+  decrease() {
+    this.sidenavWidth = 4;
+    console.log('decrease sidenav width');
   }
 
   getData(){

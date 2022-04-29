@@ -32,6 +32,10 @@ import { FreetableComponent } from './freetable/freetable.component';
 import { TablesComponent } from './tables/tables.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { OrderComponent } from './order/order.component';
+import { CurrentordersComponent } from './currentorders/currentorders.component';
+import { ChefComponent } from './chef/chef.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
+import { DeliverypersonComponent } from './deliveryperson/deliveryperson.component';
 
 
 @NgModule({
@@ -47,7 +51,11 @@ import { OrderComponent } from './order/order.component';
     IngredientComponent,
     ItemComponent,
     AdditemComponent,
-    OrderComponent
+    OrderComponent,
+    CurrentordersComponent,
+    ChefComponent,
+    AnalyticsComponent,
+    DeliverypersonComponent
   ],
   imports: [
     BrowserModule,

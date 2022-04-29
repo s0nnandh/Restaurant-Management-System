@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class AddemployeeComponent implements OnInit {
 
+  role !: string | null;
+
   sidenavWidth = 4;
   ngStyle: string | undefined;
 
@@ -47,6 +49,7 @@ export class AddemployeeComponent implements OnInit {
   constructor(private employeeService : EmployeeService, private router: Router, private activatedroute:ActivatedRoute) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem("role") != null) this.role = sessionStorage.getItem("role");
     this.chefForm.reset();
     this.waiterForm.reset();
     this.deliverypersonForm.reset();

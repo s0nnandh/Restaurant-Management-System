@@ -11,6 +11,8 @@ import { FreeData } from '../tables/tables.component';
 })
 export class FreetableComponent implements OnInit {
 
+  role !: string | null;
+
   total! : number;
 
   id! : number;
@@ -21,6 +23,7 @@ export class FreetableComponent implements OnInit {
 
   ngOnInit(): void {
     // this.id = Number(this.route.snapshot.paramMap.get('id'));
+    if(sessionStorage.getItem("role") != null) this.role = sessionStorage.getItem("role");
     this.getData();
   }
 

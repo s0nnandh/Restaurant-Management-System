@@ -17,12 +17,15 @@ export interface category_item{
 };
 
 
+
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
+
+  role !: string | null;
 
   items : Item[][] = [];
 
@@ -34,11 +37,15 @@ export class OrderComponent implements OnInit {
 
   readonly URL;
 
+  sidenavWidth = 4;
+  ngStyle: string | undefined;
+
   constructor(private dataService : DataService) { 
     this.URL = 'api/item/item_info';
   }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem("role") != null) this.role = sessionStorage.getItem("role");
     this.getData()
 
   }
@@ -90,7 +97,7 @@ export class OrderComponent implements OnInit {
     }
   }
 
-  sidenavWidth = 4;
+  
   decrease() {
     this.sidenavWidth = 4;
     console.log('decrease sidenav width');

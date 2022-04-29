@@ -7,7 +7,7 @@ const itemService = require( path.resolve( __dirname, "../controllers/item.contr
 const ingredientService = require( path.resolve( __dirname, "../controllers/ingredient.controller.js" ) );
 const orderService = require( path.resolve( __dirname, "../controllers/order.controller.js" ) );
 const tableService = require( path.resolve( __dirname, "../controllers/table.controller.js" ) );
-
+const analyticsService = require( path.resolve( __dirname, "../controllers/analytics.controller.js" ) );
 
 module.exports = app => {
 
@@ -30,4 +30,8 @@ module.exports = app => {
     app.get('/api/order/get_offline_orders', orderService.getOfflineOrders);
     app.get('/api/order/get_online_orders', orderService.getOnlineOrders);
     app.get('/api/order/get_order_items/:order_id', orderService.getOrderItems);
+
+    app.get('/api/table/free_tables', tableService.getFreetables);
+    app.get('/api/table/booked_tables', tableService.getBookedtables);
+    app.get('/api/table/:table_id', tableService.getTabledetails);
 };

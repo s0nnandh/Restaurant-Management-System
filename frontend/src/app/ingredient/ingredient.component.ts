@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class IngredientComponent implements OnInit {
 
+  role !: string | null;
+
   sidenavWidth = 4;
   ngStyle: string | undefined;
 
@@ -26,6 +28,7 @@ export class IngredientComponent implements OnInit {
   constructor(private itemService : ItemService, private router: Router, private activatedroute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem("role") != null) this.role = sessionStorage.getItem("role");
     this.ingreForm.reset();
     this.getIngredients();
   }

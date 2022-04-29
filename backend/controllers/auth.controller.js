@@ -14,12 +14,14 @@ module.exports = {
                     if(result2.length != 0){
                         res.send({
                             login: "true",
-                            role: result2[0].employee_type
+                            role: result2[0].employee_type,
+                            id: result1[0].id
                         })
                     }else{
                         res.send({
                             login: "true",
-                            role: "customer"
+                            role: "Customer",
+                            id: result1[0].id
                         })
                     }
                 }).catch(err => {
