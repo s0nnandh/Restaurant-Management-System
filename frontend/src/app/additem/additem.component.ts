@@ -121,7 +121,7 @@ export class AdditemComponent implements OnInit {
       name : x.name,
       cost : x.cost,
       category : x.category,
-      item_ingredients : x.ingredients,
+      item_ingredients : ingrs,
       is_veg : z,
       availability : k
     };

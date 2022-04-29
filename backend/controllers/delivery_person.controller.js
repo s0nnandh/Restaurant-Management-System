@@ -6,7 +6,7 @@ module.exports = {
 
     getDeliveryPersonOrders: function(req, res, next) {
 
-        const get_query = `select order_id, status, placing_time from order_ where status='Prepared' and delivery_person_id=$1;`;
+        const get_query = `select a.order_id, a.placing_time, b.locality, b.city, b.pincode from order_ as a, area as b where a.status='Prepared' and a.delivery_person_id=$1 and a.delivery_area=b.area_id;`;
         
         db.any(get_query, [req.params['delivery_person_id']]).then(result => {
             res.send(result);
