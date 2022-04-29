@@ -25,8 +25,13 @@ export interface FreeData {
 
 export class TablesComponent implements OnInit {
 
+
+  sidenavWidth = 4;
+  ngStyle: string | undefined;
+
   freeTables : Table[] = [];
   busyTables : Table[] = [];
+
 
   
 
@@ -36,6 +41,15 @@ export class TablesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getData();
+  }
+
+  increase() {
+    this.sidenavWidth = 15;
+    console.log('increase sidenav width');
+  }
+  decrease() {
+    this.sidenavWidth = 4;
+    console.log('decrease sidenav width');
   }
 
   getData(){

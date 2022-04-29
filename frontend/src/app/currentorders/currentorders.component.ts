@@ -21,6 +21,9 @@ export interface Item_list{
 
 export class CurrentordersComponent implements OnInit {
 
+  sidenavWidth = 4;
+  ngStyle: string | undefined;
+
   offline_orders : Order[] = [];
 
   online_orders : Order[] = [];
@@ -40,6 +43,15 @@ export class CurrentordersComponent implements OnInit {
   ngOnInit(): void {
     this.getOfflineData();
     this.getOnlineData();
+  }
+
+  increase() {
+    this.sidenavWidth = 15;
+    console.log('increase sidenav width');
+  }
+  decrease() {
+    this.sidenavWidth = 4;
+    console.log('decrease sidenav width');
   }
 
   getOfflineData(){

@@ -13,6 +13,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class AdditemComponent implements OnInit {
 
+  sidenavWidth = 4;
+  ngStyle: string | undefined;
+
   k!: FormArray;
 
   
@@ -56,7 +59,7 @@ export class AdditemComponent implements OnInit {
     console.log("rAJESH");
     this.ItemForm.reset();
   }
-  sidenavWidth = 4;
+  
   decrease() {
     this.sidenavWidth = 4;
     console.log('decrease sidenav width');

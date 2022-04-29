@@ -9,6 +9,7 @@ import { AdditemComponent } from './additem/additem.component';
 import { TablesComponent } from './tables/tables.component';
 import { OrderComponent } from './order/order.component';
 import { CurrentordersComponent } from './currentorders/currentorders.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
 import { ChefComponent } from './chef/chef.component';
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path : 'tables', component : TablesComponent},
   { path : 'order', component : OrderComponent},
   { path : 'current', component : CurrentordersComponent},
+  { path : 'analytics', component : AnalyticsComponent},
   { path : 'chef/:id', component : ChefComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];

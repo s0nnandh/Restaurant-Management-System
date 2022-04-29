@@ -17,6 +17,7 @@ export interface category_item{
 };
 
 
+
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
@@ -33,6 +34,9 @@ export class OrderComponent implements OnInit {
   cnt : number = -1;
 
   readonly URL;
+
+  sidenavWidth = 4;
+  ngStyle: string | undefined;
 
   constructor(private dataService : DataService) { 
     this.URL = 'api/item/item_info';
@@ -90,7 +94,7 @@ export class OrderComponent implements OnInit {
     }
   }
 
-  sidenavWidth = 4;
+  
   decrease() {
     this.sidenavWidth = 4;
     console.log('decrease sidenav width');

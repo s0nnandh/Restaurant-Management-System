@@ -34,6 +34,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { OrderComponent } from './order/order.component';
 import { CurrentordersComponent } from './currentorders/currentorders.component';
 import { ChefComponent } from './chef/chef.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { ChefComponent } from './chef/chef.component';
     AdditemComponent,
     OrderComponent,
     CurrentordersComponent,
-    ChefComponent
+    ChefComponent,
+    AnalyticsComponent
   ],
   imports: [
     BrowserModule,
