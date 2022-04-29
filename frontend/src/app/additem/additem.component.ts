@@ -13,6 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class AdditemComponent implements OnInit {
 
+  role !: string | null;
+
   sidenavWidth = 4;
   ngStyle: string | undefined;
 
@@ -37,6 +39,7 @@ export class AdditemComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem("role") != null) this.role = sessionStorage.getItem("role");
     this.ItemForm.reset();
   }
   addItem(){

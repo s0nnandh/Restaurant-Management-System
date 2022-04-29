@@ -9,6 +9,8 @@ import { Router, ActivatedRoute  } from '@angular/router';
 })
 export class EmployeeComponent implements OnInit {
 
+  role !: string | null;
+  
 
   sidenavWidth = 4;
   ngStyle: string | undefined;
@@ -30,6 +32,9 @@ export class EmployeeComponent implements OnInit {
   constructor(private employeeService : EmployeeService, private router: Router, private activatedroute:ActivatedRoute) { }
 
   ngOnInit(): void {
+    //console.log("role before is " + this.role );
+    if(sessionStorage.getItem("role") != null) this.role = sessionStorage.getItem("role");
+    //console.log("role after is " + this.role );
     this.getChefs();
     this.getWaiters();
     this.getDeliveryPersons();

@@ -7,12 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnalyticsComponent implements OnInit {
 
+  role !: string | null;
+
   sidenavWidth = 4;
   ngStyle: string | undefined;
 
   constructor() { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem("role") != null) this.role = sessionStorage.getItem("role");
   }
 
   decrease() {

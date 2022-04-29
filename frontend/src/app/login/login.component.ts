@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
 
 
   role: string = "";
+  id: number = 0;
   // x: string = "";
 
   constructor(private loginService : LoginService,private fb: FormBuilder,private router: Router, private activatedroute:ActivatedRoute) { }
@@ -74,11 +75,13 @@ export class LoginComponent implements OnInit {
         console.log(this.registerForm.value);
         sessionStorage.setItem("is_logged",data.login);
         sessionStorage.setItem("role",data.role);
+        sessionStorage.setItem("id",data.id);
         this.role=data.role;
+        this.id = data.id;
         // if(sessionStorage.getItem("x")==null){
         //   console.log("yes, x is null");
         // }
-        
+        this.navigate();
       }
       else{
         alert("Login Failed\n Enter credentials correctly");
@@ -98,9 +101,14 @@ export class LoginComponent implements OnInit {
 
   }
 
-  // navigate(){
-  //   if(role === "Customer")
-  // }
+  navigate(){
+    if(this.role === "Manager") this.router.navigate(['/employee']);
+    else if(this.role === "Waiter") this.router.navigate(['/tables']);
+    else if(this.role === "Chef") this.router.navigate(['/chef/'+this.id]);
+    else if(this.role === "Delivery-Person") this.router.navigate(['/deliveryperson/'+this.id]);
+    else if(this.role === "Customer") this.router.navigate(['/order']);
+    else this.router.navigate(['/login']);
+  }
 
 
 }

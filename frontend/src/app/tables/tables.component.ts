@@ -25,6 +25,7 @@ export interface FreeData {
 
 export class TablesComponent implements OnInit {
 
+  role !: string | null;
 
   sidenavWidth = 4;
   ngStyle: string | undefined;
@@ -40,6 +41,7 @@ export class TablesComponent implements OnInit {
   constructor(private dataService : DataService, private router: Router, private activatedroute:ActivatedRoute, public dialog : MatDialog) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem("role") != null) this.role = sessionStorage.getItem("role");
     this.getData();
   }
 

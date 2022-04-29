@@ -9,6 +9,8 @@ import { Router, ActivatedRoute  } from '@angular/router';
 })
 export class ItemComponent implements OnInit {
 
+  role !: string | null;
+
   sidenavWidth = 4;
   ngStyle: string | undefined;
 
@@ -20,6 +22,7 @@ export class ItemComponent implements OnInit {
   constructor(private itemService : ItemService, private router: Router, private activatedroute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem("role") != null) this.role = sessionStorage.getItem("role");
     this.getItems();
   }
 

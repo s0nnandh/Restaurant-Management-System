@@ -25,6 +25,8 @@ export interface category_item{
 })
 export class OrderComponent implements OnInit {
 
+  role !: string | null;
+
   items : Item[][] = [];
 
   categories : string[] = [];
@@ -43,6 +45,7 @@ export class OrderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem("role") != null) this.role = sessionStorage.getItem("role");
     this.getData()
 
   }

@@ -8,7 +8,7 @@
       <div class="logomain"></div>
       <br>
       <mat-nav-list>
-        <mat-list-item routerLink="/employee" routerLinkActive="active" >
+        <mat-list-item routerLink="/employee" routerLinkActive="active" *ngIf="role=='Manager'">
           <mat-icon mat-list-icon>person</mat-icon>
           <div fxFlex="10"></div>
           <div *ngIf="sidenavWidth > 6" class="sidenav-item">
@@ -16,7 +16,7 @@
           </div>
         </mat-list-item>
   
-        <mat-list-item routerLink="/addemployee" routerLinkActive="active">
+        <mat-list-item routerLink="/addemployee" routerLinkActive="active" *ngIf="role=='Manager'">
           <mat-icon mat-list-icon>add</mat-icon>
           <div fxFlex="10"></div>
           <div *ngIf="sidenavWidth > 6" class="sidenav-item">
@@ -24,7 +24,7 @@
           </div>
         </mat-list-item>
   
-        <mat-list-item routerLink="/ingredient" routerLinkActive="active">
+        <mat-list-item routerLink="/ingredient" routerLinkActive="active" *ngIf="role=='Manager'">
           <mat-icon mat-list-icon>store</mat-icon>
           <div fxFlex="10"></div>
           <div *ngIf="sidenavWidth > 6" class="sidenav-item">
@@ -32,7 +32,7 @@
           </div>
         </mat-list-item>
   
-        <mat-list-item routerLink="/item" routerLinkActive="active">
+        <mat-list-item routerLink="/item" routerLinkActive="active" *ngIf="role=='Manager'">
             <mat-icon mat-list-icon>view_list</mat-icon>
             <div fxFlex="10"></div>
             <div *ngIf="sidenavWidth > 6" class="sidenav-item">
@@ -40,7 +40,7 @@
             </div>
         </mat-list-item>
     
-        <mat-list-item routerLink="/additem" routerLinkActive="active">
+        <mat-list-item routerLink="/additem" routerLinkActive="active" *ngIf="role=='Manager'">
             <mat-icon mat-list-icon>add</mat-icon>
             <div fxFlex="10"></div>
             <div *ngIf="sidenavWidth > 6" class="sidenav-item">
@@ -48,7 +48,7 @@
             </div>
         </mat-list-item>
 
-        <mat-list-item routerLink="/tables" routerLinkActive="active">
+        <mat-list-item routerLink="/tables" routerLinkActive="active" *ngIf="role=='Manager' || role=='Waiter'">
             <mat-icon mat-list-icon>tab</mat-icon>
             <div fxFlex="10"></div>
             <div *ngIf="sidenavWidth > 6" class="sidenav-item">
@@ -56,7 +56,7 @@
             </div>
           </mat-list-item>
           
-          <mat-list-item routerLink="/order" routerLinkActive="active">
+          <mat-list-item routerLink="/order" routerLinkActive="active" *ngIf="role=='Manager' || role=='Waiter' || role=='Customer'">
             <mat-icon mat-list-icon>shopping_cart</mat-icon>
             <div fxFlex="10"></div>
             <div *ngIf="sidenavWidth > 6" class="sidenav-item">
@@ -64,7 +64,7 @@
             </div>
         </mat-list-item>
   
-        <mat-list-item routerLink="/current" routerLinkActive="active">
+        <mat-list-item routerLink="/current" routerLinkActive="active" *ngIf="role=='Manager'">
           <mat-icon mat-list-icon>list</mat-icon>
           <div fxFlex="10"></div>
           <div *ngIf="sidenavWidth > 6" class="sidenav-item">
@@ -72,7 +72,7 @@
           </div>
       </mat-list-item>
 
-      <mat-list-item routerLink="/analytics" routerLinkActive="active">
+      <mat-list-item routerLink="/analytics" routerLinkActive="active" *ngIf="role=='Manager'">
         <mat-icon mat-list-icon>trending_up</mat-icon>
         <div fxFlex="10"></div>
         <div *ngIf="sidenavWidth > 6" class="sidenav-item">

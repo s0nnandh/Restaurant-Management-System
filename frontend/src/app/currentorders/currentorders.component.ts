@@ -21,6 +21,8 @@ export interface Item_list{
 
 export class CurrentordersComponent implements OnInit {
 
+  role !: string | null;
+
   sidenavWidth = 4;
   ngStyle: string | undefined;
 
@@ -41,6 +43,7 @@ export class CurrentordersComponent implements OnInit {
   constructor(private dataService : DataService) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem("role") != null) this.role = sessionStorage.getItem("role");
     this.getOfflineData();
     this.getOnlineData();
   }

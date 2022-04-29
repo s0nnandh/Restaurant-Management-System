@@ -35,6 +35,7 @@ import { OrderComponent } from './order/order.component';
 import { CurrentordersComponent } from './currentorders/currentorders.component';
 import { ChefComponent } from './chef/chef.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
+import { DeliverypersonComponent } from './deliveryperson/deliveryperson.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { AnalyticsComponent } from './analytics/analytics.component';
     OrderComponent,
     CurrentordersComponent,
     ChefComponent,
-    AnalyticsComponent
+    AnalyticsComponent,
+    DeliverypersonComponent
   ],
   imports: [
     BrowserModule,
