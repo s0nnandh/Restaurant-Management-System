@@ -33,4 +33,9 @@ export class EmployeeService {
     return this.http.post('http://localhost:8001/api/employee/add_delivery_person', data);
   }
 
+  getRushHours(){
+    return this.http.get(`http://localhost:8000/api/analytics/rush_hours`);
+  }
+  
+
 }

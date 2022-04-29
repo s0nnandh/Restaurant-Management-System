@@ -5,7 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { MaterialModule } from './material/material.module';
-// import { NgChartsModule } from 'ng2-charts';
+import { NgChartsModule } from 'ng2-charts';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';  
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -82,6 +82,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MatSlideToggleModule,
     MatSelectModule,
     FormsModule,
+    NgChartsModule,
   ],
   exports: [
     Ng2SearchPipeModule
