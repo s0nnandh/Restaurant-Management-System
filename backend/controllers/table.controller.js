@@ -5,7 +5,7 @@ const db = require( path.resolve( __dirname, "./index.js" ) );
 
 module.exports = {
 
-    getFreetables(req, res){
+    getFreetables(req, res, next){
 
         get_query = `select table_id, capacity, position, availability from table_ where availability=TRUE;`;
 
@@ -18,7 +18,7 @@ module.exports = {
         });
     },
 
-    getBookedtables(req, res){
+    getBookedtables(req, res, next){
 
         get_query = `select table_id, capacity, position, availability from table_ where availability=FALSE;`;
 

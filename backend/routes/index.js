@@ -36,5 +36,6 @@ module.exports = app => {
     app.get('/api/table/booked_tables', tableService.getBookedtables);
     app.get('/api/table/:table_id', tableService.getTabledetails);
 
-    app.get('/api/analytics/top_dishes_by_dow', analyticsService.topItemsByDayOfWeek)
+    app.get('/api/analytics/top_dishes_by_dow', analyticsService.topItemsByDayOfWeek);
+    app.get('/api/analytics/rush_hours', analyticsService.rushHours);
 };

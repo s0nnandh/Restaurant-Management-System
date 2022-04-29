@@ -19,6 +19,24 @@ module.exports = {
             console.log(err);
             return next(err);
         });
+    },
+
+    rushHours: function(req, res, next) {
+        query = `with
+        all_orders as (select order_id, extract(hour from placing_time) as order_hour, 
+                       extract(dow from order_date) as day from order_),
+        orders_hourly as (select day, order_hour, count(order_id) as hourly_orders 
+        from all_orders group by day, order_hour order by day, order_hour),
+        ranked_hours as (select day, order_hour, rank() over 
+                         (partition by day order by hourly_orders desc, order_hour) as ranking
+                         from orders_hourly)
+        select day, order_hour as peak_hour from ranked_hours where ranking = 1 order by day;`;
+        db.any(query, []).then(result => {
+            res.send(result);
+        }).catch((err) => {
+            console.log(err);
+            return next(err);
+        });
     }
 
 };
