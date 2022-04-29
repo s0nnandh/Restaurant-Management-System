@@ -97,6 +97,7 @@
     <p> Free Tables </p>
 </div>
 <div class="container">
+  <div *ngIf="freeTables.length > 0">
 <table mat-table [dataSource]="freeTables" class="mat-elevation-z8" width="80%">
     <ng-container matColumnDef="position">
       <th mat-header-cell *matHeaderCellDef> No. </th>
@@ -113,11 +114,13 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="bookTable(row)" ></tr>
 </table>
 </div>
+</div>
 <br>
 <div class="container">
     <p> Booked Tables </p>
 </div>
 <div class="container">
+<div *ngIf="busyTables.length > 0">
 <table mat-table [dataSource]="busyTables" class="mat-elevation-z8" width="80%">
     
     <ng-container matColumnDef="position">
@@ -134,6 +137,7 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="unBook(row)"></tr>
 </table>
+</div>
 </div>
 
 

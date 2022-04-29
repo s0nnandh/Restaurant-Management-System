@@ -58,7 +58,7 @@ module.exports = {
         values ($1, $2, $3, $4, $5) returning item_id;`;
         // insert_query_3 = `insert into required_(item_id, ingredient_id, quantity) values ($1, $2, $3);`;
 
-        const values_2 = [req.body.name, req.body.category, req.body.category, req.body.cost, 
+        const values_2 = [req.body.name, req.body.category, req.body.cost, 
                         req.body.availability, req.body.is_veg];
         const ingredient_ids = [];
         ingredients.forEach(element => {

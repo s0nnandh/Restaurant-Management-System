@@ -10,27 +10,27 @@ export class EmployeeService {
   constructor(private http: HttpClient) { }
 
   getChefs(){
-    return this.http.get(`http://localhost:8000/api/employee/chef_info`);
+    return this.http.get(`http://localhost:8001/api/employee/chef_info`);
   }
 
   getWaiters(){
-    return this.http.get(`http://localhost:8000/api/employee/waiter_info`);
+    return this.http.get(`http://localhost:8001/api/employee/waiter_info`);
   }
 
   getDeliveryPersons(){
-    return this.http.get(`http://localhost:8000/api/employee/delivery_person_info`);
+    return this.http.get(`http://localhost:8001/api/employee/delivery_person_info`);
   }
 
   addChef(data:any){
-    return this.http.post('http://localhost:8000/api/employee/add_chef', data);
+    return this.http.post('http://localhost:8001/api/employee/add_chef', data);
   }
 
   addWaiter(data:any){
-    return this.http.post('http://localhost:8000/api/employee/add_waiter', data);
+    return this.http.post('http://localhost:8001/api/employee/add_waiter', data);
   }
 
   addDeliveryPerson(data:any){
-    return this.http.post('http://localhost:8000/api/employee/add_delivery_person', data);
+    return this.http.post('http://localhost:8001/api/employee/add_delivery_person', data);
   }
 
 }

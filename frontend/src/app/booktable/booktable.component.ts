@@ -28,7 +28,7 @@ export class BooktableComponent implements OnInit {
   }
 
   getData(){
-    this.occupancy = 100;
+    this.occupancy = this.data.occupancy;
     console.log('The id recieved : ',this.data.table_id);
   }
 
