@@ -6,11 +6,11 @@ module.exports = {
 
     addChef: function(req, res, next){
 
-        const insert_query_1 = `insert into person (name, phone_number) values ($1, $2) returning id;`;
+        const insert_query_1 = `insert into person (name, phone_number, password) values ($1, $2, $3) returning id;`;
         const insert_query_2 = `insert into employee (id, shift_start_time, shift_end_time, employee_type, salary) values ($1, $2, $3, $4, $5) returning id;`;
         const insert_query_3 = `insert into chef (id, cuisine, chef_rank, availability) values ($1, $2, $3, $4) returning id;`;
 
-        values_1 = [req.body.name, req.body.phone_number];
+        values_1 = [req.body.name, req.body.phone_number, "ChefInit"];
         
 
         db.tx(t => {
@@ -44,10 +44,10 @@ module.exports = {
 
     addWaiter: function(req, res, next){
 
-        const insert_query_1 = `insert into person (name, phone_number) values ($1, $2) returning id;`;
+        const insert_query_1 = `insert into person (name, phone_number, password) values ($1, $2, $3) returning id;`;
         const insert_query_2 = `insert into employee (id, shift_start_time, shift_end_time, employee_type, salary) values ($1, $2, $3, $4, $5) returning id;`;
 
-        values_1 = [req.body.name, req.body.phone_number];
+        values_1 = [req.body.name, req.body.phone_number, "WaiterInit"];
         
 
         db.tx(t => {
@@ -79,11 +79,11 @@ module.exports = {
 
     addDeliveryPerson: function(req, res, next){
 
-        const insert_query_1 = `insert into person (name, phone_number) values ($1, $2) returning id;`;
+        const insert_query_1 = `insert into person (name, phone_number, password) values ($1, $2, $3) returning id;`;
         const insert_query_2 = `insert into employee (id, shift_start_time, shift_end_time, employee_type, salary) values ($1, $2, $3, $4, $5) returning id;`;
         const insert_query_3 = `insert into delivery_person (id, average_rating, primary_area, availability) values ($1, $2, $3, $4) returning id;`;
 
-        values_1 = [req.body.name, req.body.phone_number];
+        values_1 = [req.body.name, req.body.phone_number, "DelPerInit"];
         
 
         db.tx(t => {
