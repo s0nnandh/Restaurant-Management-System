@@ -6,7 +6,7 @@ import { Validators } from '@angular/forms';
 import { DataService } from '../data.service';
 
 export interface Ingr{
-  ingredient : string,
+  ingredient_id : number,
   quantity : number
 }
 
@@ -37,6 +37,8 @@ export class AdditemComponent implements OnInit {
   readonly Url;
 
   readonly addUrl;
+
+  ids : Map<string,number> = new Map<string,number>();
 
   searchkey1! : string;
 
@@ -71,6 +73,7 @@ export class AdditemComponent implements OnInit {
         console.log(res);
         for(let x of res){
           // console.log(x)
+          this.ids.set(x.name,x.ingredient_id);
           this.ingredients.push(x.name)
         }
 
@@ -105,7 +108,10 @@ export class AdditemComponent implements OnInit {
     console.log(x)
     var ingrs : Ingr[] = [];
     for(let y of x.ingredients){
-      ingrs.push(y)
+      ingrs.push({
+        ingredient_id : Number(this.ids.get(y.ingredient)),
+        quantity : y.quantity
+      })
     }
     var z = false,k = false;
     if(x.isVeg == 'Veg')z = true;
@@ -115,7 +121,7 @@ export class AdditemComponent implements OnInit {
       name : x.name,
       cost : x.cost,
       category : x.category,
-      item_ingredients : ingrs,
+      item_ingredients : x.ingredients,
       is_veg : z,
       availability : k
     };
@@ -125,7 +131,7 @@ export class AdditemComponent implements OnInit {
       }
     );
     console.log(a);
-    // this.ItemForm.reset();
+    this.ItemForm.reset();
   }
   
   decrease() {
