@@ -30,6 +30,8 @@ export class OrderComponent implements OnInit {
 
   total : number = 0;
 
+  cnt : number = -1;
+
   readonly URL;
 
   constructor(private dataService : DataService) { 
@@ -56,12 +58,14 @@ export class OrderComponent implements OnInit {
           console.log(res[x])
           this.categories.push(res[x].category)
           this.items.push([]);
+          this.cnt = -1;
           for(let y in res[x].items){
             // console.log(res[x].items[y])
             if(res[x].items[y].availability == false)continue;
+            this.cnt++;
             this.items[Number(x)].push({
                 id1 : Number(x),
-                id2 : Number(y),
+                id2 : this.cnt,
                 name : res[x].items[y].item_name,
                 price : Number(res[x].items[y].cost),
                 quantity : 0

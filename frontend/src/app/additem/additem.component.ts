@@ -56,5 +56,13 @@ export class AdditemComponent implements OnInit {
     console.log("rAJESH");
     this.ItemForm.reset();
   }
-
+  sidenavWidth = 4;
+  decrease() {
+    this.sidenavWidth = 4;
+    console.log('decrease sidenav width');
+  }
+  increase() {
+    this.sidenavWidth = 15;
+    console.log('increase sidenav width');
+  }
 }

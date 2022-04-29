@@ -26,6 +26,14 @@
     /* border: 5px solid #FFFF00; */
     text-align: center;
 }
+mat-card{
+  background-color: rgb(174, 211, 243);
+}
+.sss{
+  background-color: rgb(142, 173, 201);
+  padding: 1%;
+  border: #111;
+}
 body{
 	margin:0;
 	color:#6a6f8c;
