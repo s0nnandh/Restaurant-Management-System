@@ -138,6 +138,7 @@ CREATE TABLE order_ (
     customer_id      INT,
     delivery_area    INT,
     delivery_person_id INT,
+    chef_id          INT,
     delivery_rating  NUMERIC(3, 2),
     order_date       DATE NOT NULL,
     order_rating     NUMERIC(3, 2),
