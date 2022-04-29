@@ -5,9 +5,10 @@ const authService = require( path.resolve( __dirname, "../controllers/auth.contr
 const employeeService = require( path.resolve( __dirname, "../controllers/employee.controller.js" ) );
 const itemService = require( path.resolve( __dirname, "../controllers/item.controller.js" ) );
 const ingredientService = require( path.resolve( __dirname, "../controllers/ingredient.controller.js" ) );
+const tableService = require( path.resolve( __dirname, "../controllers/table.controller.js" ) );
 
 module.exports = app => {
-    app.get('/api/auth', authService.getMatches);
+    app.post('/api/auth/register', upload.none(), authService.addCustomer);
 
     app.post('/api/employee/add_chef', upload.none(), employeeService.addChef);
     app.post('/api/employee/add_waiter', upload.none(), employeeService.addWaiter);
