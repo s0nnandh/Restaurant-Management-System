@@ -5,9 +5,14 @@ const authService = require( path.resolve( __dirname, "../controllers/auth.contr
 const employeeService = require( path.resolve( __dirname, "../controllers/employee.controller.js" ) );
 const itemService = require( path.resolve( __dirname, "../controllers/item.controller.js" ) );
 const ingredientService = require( path.resolve( __dirname, "../controllers/ingredient.controller.js" ) );
+const orderService = require( path.resolve( __dirname, "../controllers/order.controller.js" ) );
+const tableService = require( path.resolve( __dirname, "../controllers/table.controller.js" ) );
+
 
 module.exports = app => {
-    app.get('/api/auth', authService.getMatches);
+
+    app.post('/api/auth/login', upload.none(), authService.login);
+    app.post('/api/auth/register', upload.none(), authService.addCustomer);
 
     app.post('/api/employee/add_chef', upload.none(), employeeService.addChef);
     app.post('/api/employee/add_waiter', upload.none(), employeeService.addWaiter);
@@ -21,4 +26,8 @@ module.exports = app => {
 
     app.post('/api/item/add_item', upload.none(), itemService.addItem);
     app.get('/api/item/item_info', itemService.getItems);
+
+    app.get('/api/order/get_offline_orders', orderService.getOfflineOrders);
+    app.get('/api/order/get_online_orders', orderService.getOnlineOrders);
+    app.get('/api/order/get_order_items/:order_id', orderService.getOrderItems);
 };
