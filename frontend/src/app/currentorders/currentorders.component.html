@@ -91,10 +91,19 @@
 
     <br>
 
-
+    
 <div class="center"><h1> Current Orders </h1></div>
-<br>
-<div class="center"><h2>Prepared Orders</h2></div>
+<br><br>
+<mat-expansion-panel >
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <h2>Prepared Orders</h2>
+    </mat-panel-title>
+    <mat-panel-description>
+      <!-- This is a summary of the content -->
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+<div class="center"><h2></h2></div>
 <div class="container" *ngFor="let order of prep_orders; let i = index">
   <br>
 <div class="dropdown">
@@ -104,7 +113,20 @@
   </div>
 </div>
 <br>
-<div class="center"><h2>Offline Orders</h2></div>
+</mat-expansion-panel>
+
+<br><br>
+
+<mat-expansion-panel >
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <h2>Offline Orders</h2>
+    </mat-panel-title>
+    <mat-panel-description>
+      <!-- This is a summary of the content -->
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+<div class="center"><h2></h2></div>
 <div class="container" *ngFor="let order of offline_orders; let i = index">
   <br>
 <div class="dropdown">
@@ -114,7 +136,20 @@
   </div>
 </div>
 <br>
-<div class="center"><h2>Online Orders</h2></div>
+</mat-expansion-panel>
+
+<br><br>
+
+<mat-expansion-panel >
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <h2>Online Orders</h2>
+    </mat-panel-title>
+    <mat-panel-description>
+      <!-- This is a summary of the content -->
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+<div class="center"><h2></h2></div>
 <div class="container" *ngFor="let order of online_orders; let i = index">
     <div class="dropdown">
         <br>
@@ -122,7 +157,9 @@
         <br>
       </div>
     </div>
-
+    <br>
+  </mat-expansion-panel>
+  <br>
 
 </mat-sidenav-container>
 

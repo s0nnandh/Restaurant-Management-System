@@ -335,7 +335,7 @@ background-color: #3498DB;
 .form {
   text-align: center;
   min-width: 500px;
-  max-width: 4000px;
+  max-width: 600px;
   width: 100%;
 }
 
@@ -410,13 +410,24 @@ justify-content: left;
 	background:rgba(255,255,255,.1);
 } */
 .button{
-  width: 150px;
+  width: 50px;
   background-color: #04AA6D;
   height: 50px;
   font-weight: 400px;
   color: white;
   border-radius: 50px;
 }
+
+.button:hover {
+  background-color: #9fdbc8;
+}
+
+.button:disabled {
+  background-color: rgb(218, 211, 211);
+  color: #aaa;
+  cursor: auto;
+}
+
 .chart-container{
   text-align: center;
   padding: 0% 20% 20% 20%;

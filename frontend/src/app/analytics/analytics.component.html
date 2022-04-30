@@ -92,12 +92,11 @@
     <mat-tab-group mat-align-tabs="center">
 
         <mat-tab class="tab" label="Popular Dishes">
-          
-          
+          <br>
+          <h1> Popular Dishes </h1>
 
           <form [formGroup]="dayKForm" class="form" (ngSubmit)="getTopdishesbyDay()" >
             <br> <br>
-            <h1> Popular Dishes </h1>
             <div class="sign-up-htm">
 
                 <div class="group">
@@ -151,7 +150,7 @@
     </table>
 
 </div>
-      <br><br> <br><br>
+      <br><br> <br><br><br>
 
 
       <form [formGroup]="ingredientKForm" class="form" (ngSubmit)="getTopdishesbyIngredients()" >
@@ -164,12 +163,13 @@
                 <option *ngFor="let ingr of ingredients" value="{{ ingr }}" >{{ ingr }} </option>
             </select>
         </div>
+        <br>
 
             <div class="group">
               <label for="user" class="label">K value</label>
               <input id="user" type="number" class="input" formControlName="k">
              </div>
-
+             <br>
             <div class="group">
                 <input type="submit" class="button" [disabled]="!ingredientKForm.valid" value="Get">
             </div>
