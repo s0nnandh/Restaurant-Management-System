@@ -97,8 +97,59 @@
       <mat-icon (click)="sidenav.toggle()" class="sidenav-menu" >menu</mat-icon>
   </div>
 
-<p>customer orders</p>
 
+<br> <br>
+
+<div *ngIf="incompleteorders" allign="center">
+    <br>
+    <h2>Active Orders</h2>
+
+    <table mat-table [dataSource]="incompleteorders" class="mat-elevation-z8" width="90%" >
+        <ng-container matColumnDef="order_id">
+            <th mat-header-cell *matHeaderCellDef class="table-header"> Order Id </th>
+            <td mat-cell *matCellDef="let order">  {{order.order_id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="total_cost">
+            <th mat-header-cell *matHeaderCellDef class="table-header"> Total Cost </th>
+            <td mat-cell *matCellDef="let order"> {{order.total_cost}} </td>
+        </ng-container>
+        <ng-container matColumnDef="payment_method">
+            <th mat-header-cell *matHeaderCellDef class="table-header"> Payment Method </th>
+            <td mat-cell *matCellDef="let order"> {{order.payment_method}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="incomordercolumn"></tr>
+        <tr mat-row *matRowDef="let row; columns: incomordercolumn;"></tr>
+    </table>
+
+    
+</div>
+
+    <br>    
+    <br>
+    <br>
+<div *ngIf="completedorders" allign="center">
+    <br>
+    <h2>Completed Orders</h2>
+
+    <table mat-table [dataSource]="completedorders" class="mat-elevation-z8" width="90%" >
+        <ng-container matColumnDef="order_id">
+            <th mat-header-cell *matHeaderCellDef class="table-header"> Order Id </th>
+            <td mat-cell *matCellDef="let order">  {{order.order_id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="total_cost">
+            <th mat-header-cell *matHeaderCellDef class="table-header"> Total Cost </th>
+            <td mat-cell *matCellDef="let order"> {{order.total_cost}} </td>
+        </ng-container>
+        <ng-container matColumnDef="payment_method">
+            <th mat-header-cell *matHeaderCellDef class="table-header"> Payment Method </th>
+            <td mat-cell *matCellDef="let order"> {{order.payment_method}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="comordercolumn"></tr>
+        <tr mat-row *matRowDef="let row; columns: comordercolumn;"></tr>
+    </table>
+
+    
+</div>
 
 </mat-sidenav-container>
 
