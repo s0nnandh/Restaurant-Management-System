@@ -3,7 +3,7 @@ const url = require("url");
 const db = require( path.resolve( __dirname, "./index.js" ) );
 
 module.exports = {
-    topItemsByDayOfWeek: function(req, res, next) {
+    popularItemsByDayOfWeek: function(req, res, next) {
         day = req.query.day;
         limit = req.query.limit;
         query = `with 
@@ -45,6 +45,31 @@ module.exports = {
             console.log(err);
             return next(err);
         });
-    }
+    },
+
+    popularItemsByIngredients: function(req, res, next){
+        query = `with 
+        item_popularity as (select item_id, sum(item_quantity) as ordered_quantity 
+                            from order_items group by item_id )
+        select item_id, item_name, ordered_quantity from item_popularity natural join required_ natural join item
+        where ingredient_id  = $1 order by ordered_quantity desc limit $2;`;
+        db.any(query, [req.query.ingredient_id, req.query.limit]).then(result => {
+            res.send(result);
+        }).catch((err) => {
+            console.log(err);
+            return next(err);
+        });
+    },
+
+    // mostCoOrderedDishes: function(req, res, next){
+    //     query = `select item_name, order_id from order_items natural join item;`;
+    //     db.any(query, [req.query.ingredient_id, req.query.limit]).then(result => {
+    //         console.log(result);
+    //     }).catch((err) => {
+    //         console.log(err);
+    //         return next(err);
+    //     });
+
+    // }
 
 };

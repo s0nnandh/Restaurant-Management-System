@@ -66,12 +66,12 @@
         </mat-list-item>
 
         <mat-list-item [routerLink]="['/customer/',customer_id]" routerLinkActive="active" *ngIf="role=='Customer'">
-          <mat-icon mat-list-icon>list</mat-icon>
-          <div fxFlex="10"></div>
-          <div *ngIf="sidenavWidth > 6" class="sidenav-item">
-            <h5 class="lead">Orders</h5>
-          </div>
-      </mat-list-item>
+            <mat-icon mat-list-icon>list</mat-icon>
+            <div fxFlex="10"></div>
+            <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+              <h5 class="lead">Orders</h5>
+            </div>
+        </mat-list-item>
   
         <mat-list-item routerLink="/current" routerLinkActive="active" *ngIf="role=='Manager'">
           <mat-icon mat-list-icon>list</mat-icon>
@@ -97,61 +97,7 @@
       <mat-icon (click)="sidenav.toggle()" class="sidenav-menu" >menu</mat-icon>
   </div>
 
-
-<div class="centre"><h1>Place Order</h1></div>
-
-<div class="vertical">
-    <div class="vertical" *ngFor="let items1 of items;let i = index;">
-        <H2><p>{{ categories[i] }}</p> </H2>
-    <div class="row">
-      
-      <div  *ngFor="let item of items1" class = "sss">
-        <div class="centre">
-        <mat-card>
-
-            <mat-card-title>
-              <h4><strong>Item :</strong>  {{item.item_name}}</h4>
-            </mat-card-title>
-            <mat-card-content>
-              <h4><strong>Prize :</strong>  {{item.price}}</h4>
-            </mat-card-content>
-            <mat-card-actions>
-                <strong>Quantity :   </strong>
-                <input type=button value="+" (click)="ItemIncrease(item)" />
-                {{ item.quantity }}
-                <input type=button value="-" (click)="ItemDecrease(item)" />
-                
-            </mat-card-actions>
-            <br>
-        </mat-card>
-        <br>
-      </div>
-      <br>
-      </div>
-    </div>
-</div>
-  </div>
-  <br>
-  <br>
-  <div>
-    <br>
-    <br>
-<div class="center">
-<br>
-<br>
-<mat-form-field appearance="fill">
-  <mat-label>Select an option</mat-label>
-  <mat-select [(value)]="payment_method">
-    <mat-option>None</mat-option>
-    <mat-option value="UPI">UPI</mat-option>
-    <mat-option value="Cash">Cash</mat-option>
-    <mat-option value="Card">Card</mat-option>
-  </mat-select>
-</mat-form-field>
-</div>
-<div> <h2> Total : {{ total }} </h2> </div>
-<button class="dropbtn" (click)="PlaceOrder()" [disabled]="!total" > Place Order </button></div>
-
+<p>customer orders</p>
 
 
 </mat-sidenav-container>

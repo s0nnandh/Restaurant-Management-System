@@ -1,110 +1,400 @@
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 
-.li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  .li a:hover:not(.active) {
-    background-color: #111;
-  }
-  
-  .active {
-    background-color: #04AA6D;
-  }
-  .ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
 
 .center {
-    /* border: 5px solid #FFFF00; */
-    text-align: center;
-}
-body{
-	margin:0;
-	color:#6a6f8c;
-	background:#c8c8c8;
-	font:600 16px/18px 'Open Sans',sans-serif;
-}
-.button {
-    background-color: #04AA6D; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
-
-.button:hover {
-    background-color: #308566;
-}
-
-  div {
+  /* border: 5px solid #FFFF00; */
   text-align: center;
-  width: 100%;
-  display: flex;
-  color: rgb(48, 64, 70);
+  display:flex;
+  
   justify-content:center;
-  /* background-color: rgb(155, 215, 231); */
+}
+
+/* table, th, td {
+  border: 1px solid black;
+}
+
+td {
+  text-align: center;
+}
+
+h1 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  font-size: 150%;
+}
+
+.inc_font{
+font-size: larger;
+}
+
+.c1{
+color: red;
+}
+
+.c2{
+color: green;
+}
+
+.c3{
+color: blue;
+}
+
+.mat-card{
+background-color: beige;
+width: 200px;
+}
+
+.mat-card-title{
+font-size: medium;
+}
+
+.l-table{
+float: left ;
+width: 33%;
+
+}
+
+.m-table{
+float: left;
+width: 33%;
+
+}
+
+.r-table{
+float: right;
+width:33%
+} */
+
+/* .demo-tab-group {
+  border: 1px solid #e8e8e8;
+}
+
+.demo-tab-content {
+  padding: 16px;
+}
+
+.mat-tab-label-active{
+  background-color: red ;
+  opacity: 1 !important;
+} */
 
 
-  }
+
+::ng-deep .mat-tab-list .mat-tab-labels  {
+  color: rgb(75, 125, 167);
+  background-color: #3498DB;
+  width: 100%;
+  
+  text-align: center;
+  justify-content:center;
+}
+
+.login-wrap{
+width:100%;
+margin:auto;
+max-width:525px;
+min-height:670px;
+position:relative;
+/* background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center; */
+box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+.login-html{
+width:100%;
+height:100%;
+position:absolute;
+padding:90px 70px 50px 70px;
+background:#adbfa5;
+}
+.login-html .sign-in-htm,
+.login-html .sign-up-htm{
+top:0;
+left:0;
+right:0;
+bottom:0;
+position:absolute;
+transform:rotateY(180deg);
+backface-visibility:hidden;
+transition:all .4s linear;
+}
+.login-html .sign-in,
+.login-html .sign-up,
+.login-form .group .check{
+display:none;
+}
+.login-html .tab,
+.login-form .group .label,
+.login-form .group .button{
+text-transform:uppercase;
+}
+.login-html .tab{
+font-size:22px;
+margin-right:15px;
+padding-bottom:5px;
+margin:0 15px 10px 0;
+display:inline-block;
+border-bottom:2px solid transparent;
+}
+.login-html .sign-in:checked + .tab,
+.login-html .sign-up:checked + .tab{
+color:#fff;
+border-color:#1161ee;
+}
+.login-form{
+min-height:345px;
+position:relative;
+perspective:1000px;
+transform-style:preserve-3d;
+  background:#adbfa5;
+  text-align: center;
+  justify-content:center;
+  padding:50px 70px 50px 50px;
+  
+}
+.login-form .group{
+margin-bottom:15px;
+}
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button{
+width:100%;
+color:#fff;
+  font-weight: 600;
+display:block;
+}
+.login-form .group .input,
+.login-form .group .button{
+  color: #0c0609;
+border:none;
+padding:15px 20px;
+border-radius:25px;
+background:rgba(255,255,255,.1);
+}
+.login-form .group input[data-type="password"]{
+text-security:circle;
+-webkit-text-security:circle;
+}
+.login-form .group .label{
+color:rgb(18, 17, 41);
+font-size:12px;
+}
+.login-form .group .button{
+background:#6385c0;
+}
+.login-form .group label .icon{
+width:15px;
+height:15px;
+border-radius:2px;
+position:relative;
+display:inline-block;
+background:rgba(255,255,255,.1);
+}
+.login-form .group label .icon:before,
+.login-form .group label .icon:after{
+content:'';
+width:10px;
+height:2px;
+background:#fff;
+position:absolute;
+transition:all .2s ease-in-out 0s;
+}
+.login-form .group label .icon:before{
+left:3px;
+width:5px;
+bottom:6px;
+transform:scale(0) rotate(0);
+}
+.login-form .group label .icon:after{
+top:6px;
+right:0;
+transform:scale(0) rotate(0);
+}
+.login-form .group .check:checked + label{
+color:#fff;
+}
+.login-form .group .check:checked + label .icon{
+background:#1161ee;
+}
+.login-form .group .check:checked + label .icon:before{
+transform:scale(1) rotate(45deg);
+}
+.login-form .group .check:checked + label .icon:after{
+transform:scale(1) rotate(-45deg);
+}
+.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+transform:rotate(0);
+}
+.login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
+transform:rotate(0);
+}
+
+.hr{
+height:2px;
+margin:60px 0 50px 0;
+background:rgba(255,255,255,.2);
+}
+.foot-lnk{
+text-align:center;
+}
+/* select option {
+  color: black;
+}
+select:not(:checked) {
+  color: gray;
+} */
+option:hover,
+option:focus,
+option:active,
+option:checked {
+background:lightslategrey;
+}
+select{
+  padding:15px 20px;
+border-radius:25px;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(12, 11, 11);
+}
+
+.active {
+  background-color: #04AA6D;
+}
+ul {
+color:#849293;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(100, 92, 105);
+}
+.center {
+  /* border: 5px solid #FFFF00; */
+  text-align: center;
+}
 
 
-  td.mat-cell, th.mat-header-cell {
-    text-align: center;
-    justify-content:center;
+.login-form .group .button {
+  /* font-family: Arial; */
+text-transform:uppercase;
+width:100%;
+color:rgb(90, 123, 138);
+  font-weight: 600;
+display:block;
+color: #0c0609;
+border:none;
+padding:15px 20px;
+border-radius:25px;
+background:rgba(255,255,255,.1);
+background:#6385c0;
+  /* background-color: rgb(197, 184, 184);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand; */
+}
+.login-form .group .button:hover {
+  background-color: #b0ccd8;
+}
+.login-form .group .button:disabled {
+  background-color: rgb(218, 211, 211);
+  color: #aaa;
+  cursor: auto;
+}
+
+
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.field {
+  width: 100%;
+}
+
+td.mat-cell, th.mat-header-cell {
+  text-align: center;
+  justify-content:center;
 }
 
 .centre {
-    text-align: center
-  }
+  text-align: center
+}
 
-  mat-header-cell, mat-header-row, .mat-header-cell-def{
-    min-height:25px;
-    font-family:Verdana,sans-serif;
-    font-weight:bold;
-    font-size:13px;
-    color: #1a084c;
-    margin-bottom:5px;
-     top: 0;
-      position: sticky;
-      z-index: 1;
-      background-color: inherit;
-  }
+mat-header-cell, mat-header-row, .mat-header-cell-def{
+  min-height:25px;
+  font-family:Verdana,sans-serif;
+  font-weight:bold;
+  font-size:13px;
+  color: #1a084c;
+  margin-bottom:5px;
+   top: 0;
+    position: sticky;
+    z-index: 1;
+    background-color: inherit;
+}
 
-  .mat-table{
-    background-color: rgb(196, 214, 218);
-  }
+/* .mat-table{
+  background-color: beige;
+} */
 
+.sign-up-htm .group .label {
+
+color: #0c0609;
+border:none;
+padding:15px 20px;
+border-radius:25px;
+background:rgba(255,255,255,.1);
+}
+
+.group .button:disabled {
+  background-color: rgb(218, 211, 211);
+  color: #aaa;
+  cursor: auto;
+}
+
+.mat-table{
+  background-color: rgb(196, 214, 218);
+}
 
 .example-sidenav-content .mat-icon {
-    
-    vertical-align: left;
-    background-color: #6c7b95;
-  }
-
-  .example-sidenav-content {
-    text-align: left;
-    justify-content: left;
-    
-  }
-
-  .mat-form-field + .mat-form-field {
-    margin-left: 8px;
-  }
   
-
-.vertical { 
-      /* background-color: yellow;  */
-      display: block;
-      
+vertical-align: left;
+background-color: #6c7b95;
 }
+
+.example-sidenav-content {
+text-align: left;
+justify-content: left;
+
+}
+

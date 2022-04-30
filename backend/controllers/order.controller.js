@@ -4,7 +4,7 @@ const db = require( path.resolve( __dirname, "./index.js" ) );
 
 module.exports = {
     getOfflineOrders: function(req, res, next) {
-        query = `select * from order_ where (status!='Delivered'or status!='Completed') and order_mode='In-person'`
+        query = `select * from order_ where status='Prepared' and order_mode='In-person';`;
         db.any(query, []).then(result => {
             res.send(result);
         })
@@ -15,7 +15,18 @@ module.exports = {
     },
 
     getOnlineOrders: function(req, res, next) {
-        query = `select * from order_ where (status!='Delivered'or status!='Completed') and order_mode='Online'`
+        query = `select * from order_ where status='Prepared' and order_mode='Online';`;
+        db.any(query, []).then(result => {
+            res.send(result);
+        })
+        .catch(err => {
+            console.log(err);
+            return next(err);
+        });
+    },
+
+    getOrders: function(req, res, next){
+        query = `select * from order_ where status='Ordered';`;
         db.any(query, []).then(result => {
             res.send(result);
         })
@@ -26,7 +37,7 @@ module.exports = {
     },
 
     getOrderItems: function(req, res, next) {
-        const query = `select item_name, item_quantity from order_items natural join item where
+        const query = `select item_id, item_name, item_quantity from order_items natural join item where
         order_id = $1;`;
         db.any(query, [req.params['order_id']]).then(result => {
             res.send(result);
