@@ -61,18 +61,19 @@ body{
 
 /* Dropdown Button */
 .dropbtn {
-    background-color: #3498DB;
+    background-color: #66b4e9;
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    width: 90%;
+    width: 40%;
+    border-radius: 40px;
   }
   
   /* Dropdown button on hover & focus */
   .dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
+    background-color: #95c2e0;
   }
   
   /* The container <div> - needed to position the dropdown content */
@@ -148,4 +149,22 @@ body{
     /* background-color: yellow;  */
     display: block;
     
+}
+.bg-img {
+	/* The image used */
+	background-image: url('../../assets/chef.jpg');
+  
+	/* Control the height of the image */
+	min-height: 100%;
+  min-width: 100%;
+
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+  }
+
+.display {
+  display: block;
 }

@@ -1,0 +1,62 @@
+<!-- <p>myorder works!</p> -->
+<p mat-dialog-title>Order No : {{ data.order_id }} </p>
+<div mat-dialog-content >
+
+    <div *ngFor="let x of items" class="vertical">
+        {{ x.item_name }} - {{ x.item_quantity }}
+        <br>
+        <br>
+    </div>
+
+    <!-- <div  *ngIf="items">
+            
+        <table mat-table [dataSource]="items" class="mat-elevation-z8" width="50%">
+            <ng-container matColumnDef="item_id">
+                <th mat-header-cell *matHeaderCellDef class="table-header"> Item Id </th>
+                <td mat-cell *matCellDef="let waiter">  {{waiter.item_id}} </td>
+            </ng-container>
+            <ng-container matColumnDef="item_name">
+                <th mat-header-cell *matHeaderCellDef class="table-header"> Item </th>
+                <td mat-cell *matCellDef="let waiter">  {{waiter.item_name}} </td>
+            </ng-container>
+            <ng-container matColumnDef="item_quantity">
+                <th mat-header-cell *matHeaderCellDef class="table-header"> Quantity </th>
+                <td mat-cell *matCellDef="let waiter"> {{waiter.item_quantity}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
+        </table>
+
+    </div> -->
+    <div *ngIf="status === 'Ordered'">
+        <mat-form-field appearance="fill" >
+            <mat-label>Select Chef</mat-label>
+            <mat-select [(value)]="chef" >
+                <mat-option *ngFor="let ingr of chefs" value="{{ ingr.name }}" >{{ ingr.name }} </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div *ngIf="status === 'Prepared' && order_mode === 'In-person'">
+        <div mat-dialog-actions> 
+            <button mat-button mat-dialog-close (click)="Update()" >Mark as Completed</button>
+        </div>
+    </div>
+    <div *ngIf="status === 'Prepared' && order_mode === 'Online'">
+        <mat-form-field appearance="fill" >
+            <mat-label>Select Delivery Person</mat-label>
+            <mat-select [(value)]="dp" >
+                <mat-option *ngFor="let ingr of dpersons" value="{{ ingr.name }}" >{{ ingr.name }} </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div *ngIf="chef">
+        <div mat-dialog-actions> 
+            <button mat-button mat-dialog-close>Assign Order to {{ chef }}</button>
+        </div>
+    </div>
+    <div *ngIf="dp">
+        <div mat-dialog-actions> 
+            <button mat-button mat-dialog-close>Assign Order to {{ dp }}</button>
+        </div>
+    </div>
+</div>

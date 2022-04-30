@@ -20,6 +20,9 @@ export class ChefComponent implements OnInit {
 
   id! : number;
 
+  time : string[] = [];
+  
+
   readonly URL;
 
   readonly postUrl;
@@ -41,11 +44,12 @@ export class ChefComponent implements OnInit {
     this.orders = [];
     this.show_orders = [];
     this.dataService.get(this.URL).pipe().subscribe((d :any) => {
-        // console.log('Chefs',d);
+        console.log('Chefs',d);
         for(let x of d){
           console.log(x);
           this.orders.push(x.order_id);
           this.show_orders.push(false);
+          this.time.push(x.placing_time);
         }
     });
   }

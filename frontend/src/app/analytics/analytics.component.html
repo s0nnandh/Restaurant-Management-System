@@ -93,15 +93,15 @@
 
         <mat-tab class="tab" label="Popular Dishes">
           
-          <br> <br>
-            <h2> Popular Dishes </h2>
+          
 
           <form [formGroup]="dayKForm" class="form" (ngSubmit)="getTopdishesbyDay()" >
-    
+            <br> <br>
+            <h1> Popular Dishes </h1>
             <div class="sign-up-htm">
 
                 <div class="group">
-                <label for="pass" class="label" >Day</label>
+                <label for="pass" class="label" ><strong>Day</strong></label>
                                     <select id="pass" name="pass" class="input" formControlName="day">
                                        
                                         <option value=0>Sunday</option>
@@ -114,22 +114,24 @@
                                     </select> 
                 
                 </div>
-
-                <div class="group">
-                  <label for="user" class="label">K value</label>
+                <br>
+                  <label for="user" ><strong>K-value </strong>              </label>
+                  
                   <input id="user" type="number" class="input" formControlName="k">
-                 </div>
+                  <br>
+                  <br>
 
-                <div class="group">
+                  <div>
+                    <strong>
                     <input type="submit" class="button" [disabled]="!dayKForm.valid" value="Get">
-                </div>
-
+                  </strong>
+                  </div>
               </div>
             </form>
 
                 <br>
 
-<div  *ngIf="topdayKdishes" allign="center">
+<div  *ngIf="topdayKdishes" allign="right">
             
     <table mat-table [dataSource]="topdayKdishes" class="mat-elevation-z8" width="80%" >
         <ng-container matColumnDef="dish_rank">
@@ -206,7 +208,7 @@
           <div class="chart-container" style=" display: block;" *ngIf="rush"  >
             <br> <br>
             <h2> Rush Hours </h2>
-            <canvas baseChart width="70" height="30"
+            <canvas baseChart width="50" height="30"
                             [data]="lineChartData"
                             [options]="lineChartOptions"
                             [type]="lineChartType"

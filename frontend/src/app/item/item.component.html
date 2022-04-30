@@ -86,13 +86,21 @@
     </mat-sidenav>
   
     
-    <div class="example-sidenav-content">
-        <mat-icon (click)="sidenav.toggle()" class="sidenav-menu" >menu</mat-icon>
-    </div>
     
-    <br>
+    <div class="bg-img">
+
+    
+
+      <div class="display">
+        <div class="example-sidenav-content">
+          <mat-icon (click)="sidenav.toggle()" class="sidenav-menu" >menu</mat-icon>
+      </div>
+      
+      <br>
+<div class="centre">
     <div *ngIf="menu" class="vertical">
-    <ul *ngFor="let cat of menu; let i = index" style="color:white;padding:10px;">
+    
+    <ul *ngFor="let cat of menu; let i = index" class="ccc">
         <!-- <li>{{ group.country }}</li>
         <ul>
           <li *ngFor="let person of group.people">
@@ -156,12 +164,15 @@
     </ul>
     
     </div>
-    
     <br> <br>
-    
+    </div>
     <div>
         <button class="button" routerLink="/additem"> Add Item </button>
     </div>
+      </div>
+    </div>
+        
+    
 
 </mat-sidenav-container>
 

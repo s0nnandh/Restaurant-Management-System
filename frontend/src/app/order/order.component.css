@@ -27,12 +27,17 @@
     text-align: center;
 }
 mat-card{
-  background-color: rgb(174, 211, 243);
+  background-color: rgb(221, 230, 237);
+  width: 150px;
+  border-radius: 20%;
 }
 .sss{
-  background-color: rgb(142, 173, 201);
-  padding: 1%;
+  background-color: rgb(213, 229, 244);
+  padding: 50px;
   border: #111;
+  border-radius: 30%;
+  
+
 }
 body{
 	margin:0;
@@ -73,7 +78,7 @@ body{
 }
 
 .centre {
-    text-align: center
+    text-align: right;
   }
 
   mat-header-cell, mat-header-row, .mat-header-cell-def{
@@ -97,7 +102,7 @@ body{
 .example-sidenav-content .mat-icon {
     
     vertical-align: left;
-    background-color: #6c7b95;
+    background-color: #c3ccdd;
   }
 
   .example-sidenav-content {
@@ -121,7 +126,7 @@ body{
 .dropbtn {
   background-color: #3498DB;
   color: white;
-  padding: 16px;
+  padding: 1px;
   font-size: 16px;
   border: none;
   cursor: pointer;
@@ -130,5 +135,5 @@ body{
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
+  background-color: #b2d1e5;
 }
