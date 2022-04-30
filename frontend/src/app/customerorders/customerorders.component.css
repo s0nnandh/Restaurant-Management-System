@@ -1,0 +1,134 @@
+
+.li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #04AA6D;
+  }
+  .ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+
+.center {
+    /* border: 5px solid #FFFF00; */
+    text-align: center;
+}
+mat-card{
+  background-color: rgb(174, 211, 243);
+}
+.sss{
+  background-color: rgb(142, 173, 201);
+  padding: 1%;
+  border: #111;
+}
+body{
+	margin:0;
+	color:#6a6f8c;
+	background:#c8c8c8;
+	font:600 16px/18px 'Open Sans',sans-serif;
+}
+.button {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+.button:hover {
+    background-color: #308566;
+}
+
+  div {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  color: rgb(48, 64, 70);
+  justify-content:center;
+  /* background-color: rgb(155, 215, 231); */
+
+
+  }
+
+
+  td.mat-cell, th.mat-header-cell {
+    text-align: center;
+    justify-content:center;
+}
+
+.centre {
+    text-align: center
+  }
+
+  mat-header-cell, mat-header-row, .mat-header-cell-def{
+    min-height:25px;
+    font-family:Verdana,sans-serif;
+    font-weight:bold;
+    font-size:13px;
+    color: #1a084c;
+    margin-bottom:5px;
+     top: 0;
+      position: sticky;
+      z-index: 1;
+      background-color: inherit;
+  }
+
+  .mat-table{
+    background-color: rgb(196, 214, 218);
+  }
+
+
+.example-sidenav-content .mat-icon {
+    
+    vertical-align: left;
+    background-color: #6c7b95;
+  }
+
+  .example-sidenav-content {
+    text-align: left;
+    justify-content: left;
+    
+  }
+
+  .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  
+
+.vertical { 
+      /* background-color: yellow;  */
+      display: block;
+      
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: 90%;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}

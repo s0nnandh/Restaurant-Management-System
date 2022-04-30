@@ -12,11 +12,13 @@ import { CurrentordersComponent } from './currentorders/currentorders.component'
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { ChefComponent } from './chef/chef.component';
 import { DeliverypersonComponent } from './deliveryperson/deliveryperson.component';
+import { CustomerordersComponent } from './customerorders/customerorders.component';
 import { Auth1Guard } from './services/auth1.guard';
 import { Auth2Guard } from './services/auth2.guard';
 import { Auth3Guard } from './services/auth3.guard';
 import { Auth4Guard } from './services/auth4.guard';
 import { Auth5Guard } from './services/auth5.guard';
+import { Auth6Guard } from './services/auth6.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -32,6 +34,7 @@ const routes: Routes = [
   { path : 'analytics', component : AnalyticsComponent, canActivate:[Auth1Guard]},
   { path : 'chef/:id', component : ChefComponent , canActivate:[Auth4Guard]},
   { path : 'delivery/:id', component : DeliverypersonComponent , canActivate:[Auth5Guard]},
+  { path : 'customer/:customer_id', component : CustomerordersComponent , canActivate:[Auth6Guard]},
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
