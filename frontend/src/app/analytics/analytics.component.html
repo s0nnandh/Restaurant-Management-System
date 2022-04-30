@@ -85,16 +85,87 @@
   
     </mat-sidenav>
 
-
-<h1>Analytics</h1>
-
 <br>
+<h1 class="center">Analytics</h1>
+
 <div >
     <mat-tab-group mat-align-tabs="center">
-        <mat-tab class="tab" label="rush hours">
+
+        <mat-tab class="tab" label="Popular Dishes">
+          
+          <br> <br>
+            <h2> Popular Dishes </h2>
+
+          <form [formGroup]="dayKForm" class="form" (ngSubmit)="getTopdishesbyDay()" >
+    
+            <div class="sign-up-htm">
+
+                <div class="group">
+                <label for="pass" class="label" >Day</label>
+                                    <select id="pass" name="pass" class="input" formControlName="day">
+                                       
+                                        <option value=0>Sunday</option>
+                                        <option value=1>Monday</option>
+                                        <option value=2>Tuesday</option>
+                                        <option value=3>Wednesday</option>
+                                        <option value=4>Thursday</option>
+                                        <option value=5>Friday</option>
+                                        <option value=6>saturday</option>
+                                    </select> 
+                
+                </div>
+
+                <div class="group">
+                  <label for="user" class="label">K value</label>
+                  <input id="user" type="number" class="input" formControlName="k">
+                 </div>
+
+                <div class="group">
+                    <input type="submit" class="button" [disabled]="!dayKForm.valid" value="Get">
+                </div>
+
+              </div>
+            </form>
+
+                <br><br>
+
+<div  *ngIf="topdayKdishes" allign="center">
+            
+    <table mat-table [dataSource]="topdayKdishes" class="mat-elevation-z8" width="80%" >
+        <ng-container matColumnDef="dish_rank">
+            <th mat-header-cell *matHeaderCellDef class="table-header"> Rank </th>
+            <td mat-cell *matCellDef="let item">  {{item.dish_rank}} </td>
+        </ng-container>
+        <ng-container matColumnDef="item_id">
+            <th mat-header-cell *matHeaderCellDef class="table-header"> Item Id </th>
+            <td mat-cell *matCellDef="let item"> {{item.item_id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="item_name">
+            <th mat-header-cell *matHeaderCellDef class="table-header"> Item Name </th>
+            <td mat-cell *matCellDef="let item"> {{item.item_name}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="topdayKdishescolumn"></tr>
+        <tr mat-row *matRowDef="let row; columns: topdayKdishescolumn;"></tr>
+    </table>
+
+</div>
+      <br>
             
         </mat-tab>
+
         
+        <mat-tab class="tab" label="rush hours">
+          <div class="chart-container" style=" display: block;" *ngIf="rush"  >
+            <br> <br>
+            <h2> Rush Hours </h2>
+            <canvas baseChart width="70" height="30"
+                            [data]="lineChartData"
+                            [options]="lineChartOptions"
+                            [type]="lineChartType"
+            ></canvas>
+
+        </div>
+        </mat-tab>
 
 </mat-tab-group>
  

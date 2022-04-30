@@ -39,6 +39,7 @@ import { DeliverypersonComponent } from './deliveryperson/deliveryperson.compone
 import { MatSelectModule} from '@angular/material/select';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MyorderComponent } from './myorder/myorder.component';
+import { CustomerordersComponent } from './customerorders/customerorders.component';
 
 
 
@@ -60,7 +61,8 @@ import { MyorderComponent } from './myorder/myorder.component';
     ChefComponent,
     AnalyticsComponent,
     DeliverypersonComponent,
-    MyorderComponent
+    MyorderComponent,
+    CustomerordersComponent
   ],
   imports: [
     BrowserModule,

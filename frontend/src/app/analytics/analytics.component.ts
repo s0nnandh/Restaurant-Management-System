@@ -18,7 +18,11 @@ export class AnalyticsComponent implements OnInit {
   sidenavWidth = 4;
   ngStyle: string | undefined;
 
-  rushhours:any;
+  rush:any;
+  rushhours: number[]=[];
+  radius: number[]=[];
+
+
 
   labels: string[] = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];  
   public lineChartData: ChartConfiguration['data'] | undefined;
@@ -46,6 +50,14 @@ export class AnalyticsComponent implements OnInit {
   };
   public lineChartType: ChartType = 'line';
 
+  dayKForm = new FormGroup({
+    day: new FormControl('', [Validators.required]),
+    k: new FormControl('', [Validators.required, Validators.pattern("^[0-9]+$")]),
+  });
+
+  topdayKdishes:any;
+  topdayKdishescolumn: any=['dish_rank','item_id','item_name'];
+
   constructor(private employeeService : EmployeeService, private router: Router, private activatedroute:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -64,24 +76,41 @@ export class AnalyticsComponent implements OnInit {
 
   getRushHours() {
     this.employeeService.getRushHours().pipe().subscribe((d: any) => {
-      //console.log('chefs', d);
-      this.rushhours = d;
+      console.log('chefs', d);
+      this.rush = d;
       // console.log('chefs', this.chefs);
-
-      // this.lineChartData = {
-      //   datasets:[
-      //     {
-      //       data:this.team1_runs,
-      //       label:this.match_info.team1_name,
-      //       pointRadius:this.team1_wkts,
-      //     },
+      for(var i=0;i<d.length;i++){
+        this.rushhours.push(d[i].peak_hour);
+        console.log(d[i].peak_hours);
+        this.radius.push(5);
+      }
+      console.log('rushhours', this.rushhours);
+      console.log('labels', this.labels);
+      this.lineChartData = {
+        datasets:[
+          {
+            data:this.rushhours,
+            label:"Peak Hours",
+            pointRadius:this.radius,
+          },
           
-      //   ],
-      //   labels: this.labels
-      // }
+        ],
+        labels: this.labels
+      }
 
 
     });
+  }
+
+  getTopdishesbyDay(){
+
+    this.employeeService.getTopdishesbyDay(this.dayKForm.value.day, this.dayKForm.value.k).pipe().subscribe((d: any) => {
+
+      this.topdayKdishes =d;
+
+
+    });
+
   }
 
 

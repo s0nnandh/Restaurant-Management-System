@@ -11,6 +11,7 @@ const chefService = require( path.resolve( __dirname, "../controllers/chef.contr
 const deliveryService = require( path.resolve( __dirname, "../controllers/delivery_person.controller.js" ) );
 const analyticsService = require( path.resolve( __dirname, "../controllers/analytics.controller.js" ) );
 const managerService = require( path.resolve( __dirname, "../controllers/manager.controller.js" ) );
+const customerService = require( path.resolve( __dirname, "../controllers/customer.controller.js" ) );
 
 module.exports = app => {
 
@@ -48,10 +49,16 @@ module.exports = app => {
     app.get('/api/delivery_person/get_dp_items/:delivery_person_id', deliveryService.getDeliveryPersonOrders);
     app.post('/api/delivery_person/change_dp_order', deliveryService.changeDeliveryPersonOrderStatus);
 
-    app.get('/api/analytics/top_dishes_by_dow', analyticsService.popularItemsByDayOfWeek);
+    app.get('/api/analytics/popular_dishes_by_dow', analyticsService.popularItemsByDayOfWeek);
     app.get('/api/analytics/rush_hours', analyticsService.rushHours);
+    app.get('/api/analytics/popular_dishes_by_ingredient', analyticsService.popularItemsByIngredients);
+    // app.get('/api/analytics/most_co_ordered_dishes', analyticsService.mostCoOrderedDishes);
 
     app.post('/api/manager/assign_chef', upload.none(), managerService.assignOrderToChef);
     app.post('/api/manager/assign_delivery_person', upload.none(), managerService.assignOrderToChef);
     app.post('/api/manager/mark_completed', upload.none(), managerService.markCompleted);
+
+    app.get('/api/customer/get_completed_orders/:customer_id', customerService.getCompletedOrders);
+    app.get('/api/customer/get_incomplete_orders/:customer_id', customerService.getIncompleteOrders);
+
 };
