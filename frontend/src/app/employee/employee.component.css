@@ -155,3 +155,6 @@ body{
     background-size: cover;
     position: relative;
     }
+    .display {
+      display: block;
+    }

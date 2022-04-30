@@ -25,6 +25,7 @@
 .center {
     /* border: 5px solid #FFFF00; */
     text-align: center;
+    background-position: center;
 }
 body{
 	margin:0;
@@ -104,7 +105,34 @@ body{
   
 
 .vertical { 
+      text-align: center;
+      align-content: center;
       /* background-color: yellow;  */
       display: block;
+      /* background-color: aliceblue; */
       
+}
+.bg-img {
+	/* The image used */
+	background-image: url('../../assets/dish.jpg');
+  
+	/* Control the height of the image */
+	min-height: 100%;
+  min-width: 100%;
+  text-align: center;
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+  }
+
+.display {
+  display: block;
+}
+.ccc{
+  color:rgb(224, 188, 188);
+  /* background-color: rgb(57, 84, 108); */
+  width: 60%;
+  
 }

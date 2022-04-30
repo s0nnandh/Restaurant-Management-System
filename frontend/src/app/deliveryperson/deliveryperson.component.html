@@ -3,13 +3,44 @@
     <li style="float:right"><a class="active" href="/login">Log Out</a></li>
 </ul>
 
-<div class="center"><h1> Accepted Orders 
-  
-</h1></div>
 
+<div class="bg-img">
+
+    
+
+    <div class="display">
+        <div class="center"><h1> Accepted Orders for Delivery Person(ID : {{id}})
+  
+        </h1></div>
 <div class="container" *ngFor="let order of orders; let i = index">
     <div class="dropdown">
-        <button  (click)="show_orders[i] = !show_orders[i];"  class="dropbtn">{{ order }} </button>
+        <button  (click)="show_orders[i] = !show_orders[i];"  class="dropbtn">
+        <div class="centre">
+            <table>     
+        
+                <tr>
+            <th><strong>Order Id : </strong></th>
+            <th>{{ order }} </th>
+            
+          </tr>
+          <tr>
+            <td><strong>Locality : </strong></td>
+            <td>{{locality[i]}}</td>
+            
+          </tr>
+          <tr>
+            <td><strong>Pincode : </strong></td>
+            <td> {{pincode[i]}} </td>
+            
+          </tr>
+          <tr>
+            <td><strong>City : </strong></td>
+            <td> {{city[i]}} </td>
+            
+          </tr>
+        </table>
+    </div>
+    </button>
         <!-- <div  *ngIf="offline_items[i]" class="vertical"> -->
             
             <!-- <table mat-table [dataSource]="offline_items[i]" class="mat-elevation-z8" width="100%" [hidden]="!offline_show_items[i]">
@@ -24,8 +55,13 @@
                 <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
             </table> -->
-            <div [hidden]="!show_orders[i]" ><button [hidden]="!show_orders[i]" (click)="Done(order)" > Mark as Delivered </button></div>
+            <div [hidden]="!show_orders[i]" >
+                <br>
+                <button style="color: rgb(252, 252, 252); background-color: #04AA6D; border-radius: 40px; border: #04AA6D; padding: 0.2%;" [hidden]="!show_orders[i]" (click)="Done(order)" > Mark as Delivered </button>
+            </div>
             <br>
         <!-- </div> -->
     </div>
     </div>
+    </div>
+</div>

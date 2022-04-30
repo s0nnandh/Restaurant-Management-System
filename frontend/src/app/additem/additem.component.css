@@ -367,6 +367,9 @@ justify-content: left;
   position: relative;
   }
   H2{
-    color: rgb(33, 198, 198);
+    color: rgb(31, 14, 53);
 
   }
+.login-form{
+  border-radius: 40px;
+}

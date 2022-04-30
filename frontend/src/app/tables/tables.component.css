@@ -127,3 +127,12 @@ mat-header-cell, mat-header-row, .mat-header-cell-def{
     background-size: cover;
     position: relative;
     }
+    .display {
+      display: block;
+    }
+    p{
+      font-size:150%;
+      font-weight: 800;
+      color: aliceblue;
+      border: #111;
+    }
