@@ -59,6 +59,17 @@ module.exports = {
             console.log(err);
             return next(err);
         });
-    }
+    },
+
+    // mostCoOrderedDishes: function(req, res, next){
+    //     query = `select item_name, order_id from order_items natural join item;`;
+    //     db.any(query, [req.query.ingredient_id, req.query.limit]).then(result => {
+    //         console.log(result);
+    //     }).catch((err) => {
+    //         console.log(err);
+    //         return next(err);
+    //     });
+
+    // }
 
 };
