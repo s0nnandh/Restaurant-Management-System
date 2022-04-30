@@ -366,3 +366,6 @@ li a {
   background-size: cover;
   position: relative;
   }
+  .login-form{
+    border-radius: 40px;
+  }

@@ -103,7 +103,7 @@ width:33%
 
 ::ng-deep .mat-tab-list .mat-tab-labels  {
   color: rgb(75, 125, 167);
-  background-color: #3498DB;
+  background-color: #bdd5e6;
   width: 100%;
   
   text-align: center;
@@ -124,7 +124,7 @@ width:100%;
 height:100%;
 position:absolute;
 padding:90px 70px 50px 70px;
-background:#adbfa5;
+
 }
 .login-html .sign-in-htm,
 .login-html .sign-up-htm{
@@ -165,7 +165,7 @@ min-height:345px;
 position:relative;
 perspective:1000px;
 transform-style:preserve-3d;
-  background:#adbfa5;
+
   text-align: center;
   justify-content:center;
   padding:50px 70px 50px 50px;
@@ -178,8 +178,9 @@ margin-bottom:15px;
 .login-form .group .input,
 .login-form .group .button{
 width:100%;
-color:#fff;
+color:rgb(197, 61, 61);
   font-weight: 600;
+  background-color: #0c3149;
 display:block;
 }
 .login-form .group .input,
@@ -214,7 +215,7 @@ background:rgba(255,255,255,.1);
 content:'';
 width:10px;
 height:2px;
-background:#fff;
+background:rgb(195, 94, 94);
 position:absolute;
 transition:all .2s ease-in-out 0s;
 }
@@ -266,15 +267,15 @@ option:hover,
 option:focus,
 option:active,
 option:checked {
-background:lightslategrey;
 }
 select{
   padding:15px 20px;
+  background-color: #a7c6da;
 border-radius:25px;
 }
 li a {
   display: block;
-  color: white;
+  color: rgb(255, 255, 255);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -312,8 +313,8 @@ color: #0c0609;
 border:none;
 padding:15px 20px;
 border-radius:25px;
-background:rgba(255,255,255,.1);
-background:#6385c0;
+background-color: #3498DB;
+
   /* background-color: rgb(197, 184, 184);
   border: none;
   padding: 5px 10px;
@@ -332,8 +333,9 @@ background:#6385c0;
 
 
 .form {
-  min-width: 150px;
-  max-width: 500px;
+  text-align: center;
+  min-width: 500px;
+  max-width: 4000px;
   width: 100%;
 }
 
@@ -383,7 +385,9 @@ background:rgba(255,255,255,.1);
 }
 
 .mat-table{
-  background-color: rgb(196, 214, 218);
+  text-align: right;
+  max-width: 1000px;
+  background-color: rgb(169, 205, 213);
 }
 
 .example-sidenav-content .mat-icon {
@@ -397,4 +401,23 @@ text-align: left;
 justify-content: left;
 
 }
-
+/* .input{
+  color: #0c0609;
+	border:none;
+	padding:15px 20px;
+  background-color: #6c7b95;
+	border-radius:25px;
+	background:rgba(255,255,255,.1);
+} */
+.button{
+  width: 150px;
+  background-color: #04AA6D;
+  height: 50px;
+  font-weight: 400px;
+  color: white;
+  border-radius: 50px;
+}
+.chart-container{
+  text-align: center;
+  padding: 0% 20% 20% 20%;
+}
