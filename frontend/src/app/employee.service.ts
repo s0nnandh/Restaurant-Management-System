@@ -44,9 +44,17 @@ export class EmployeeService {
   getRushHours(){
     return this.http.get(`http://localhost:8000/api/analytics/rush_hours`);
   }
+
+  getIngredients(){
+    return this.http.get(`http://localhost:8000/api/ingredient/ingredient_info`);
+  }
   
   getTopdishesbyDay(day:number, k:number){
     return this.http.get(`http://localhost:8000/api/analytics/popular_dishes_by_dow?day=${day}&limit=${k}`);
+  }
+
+  getTopdishesbyIngredients(ingredient_id:number, k:number){
+    return this.http.get(`http://localhost:8000/api/analytics/popular_dishes_by_ingredient?ingredient_id=${ingredient_id}&limit=${k}`);
   }
 
 }

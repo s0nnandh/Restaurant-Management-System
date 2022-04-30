@@ -127,7 +127,7 @@
               </div>
             </form>
 
-                <br><br>
+                <br>
 
 <div  *ngIf="topdayKdishes" allign="center">
             
@@ -149,7 +149,55 @@
     </table>
 
 </div>
-      <br>
+      <br><br> <br><br>
+
+
+      <form [formGroup]="ingredientKForm" class="form" (ngSubmit)="getTopdishesbyIngredients()" >
+    
+        <div class="sign-up-htm">
+
+          <div class="group"> 
+            <label for="pass" class="label" >Ingredient</label>
+            <select id="pass" name="pass" class="input" formControlName="ingredient">
+                <option *ngFor="let ingr of ingredients" value="{{ ingr }}" >{{ ingr }} </option>
+            </select>
+        </div>
+
+            <div class="group">
+              <label for="user" class="label">K value</label>
+              <input id="user" type="number" class="input" formControlName="k">
+             </div>
+
+            <div class="group">
+                <input type="submit" class="button" [disabled]="!ingredientKForm.valid" value="Get">
+            </div>
+
+          </div>
+        </form>
+
+            <br>
+
+<div  *ngIf="topingredientKdishes" allign="center">
+        
+<table mat-table [dataSource]="topingredientKdishes" class="mat-elevation-z8" width="80%" >
+    <ng-container matColumnDef="item_id">
+        <th mat-header-cell *matHeaderCellDef class="table-header"> Item Id </th>
+        <td mat-cell *matCellDef="let item">  {{item.item_id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="item_name">
+        <th mat-header-cell *matHeaderCellDef class="table-header"> Item Name </th>
+        <td mat-cell *matCellDef="let item"> {{item.item_name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="ordered_quantity">
+        <th mat-header-cell *matHeaderCellDef class="table-header"> Ordered Quantity </th>
+        <td mat-cell *matCellDef="let item"> {{item.ordered_quantity}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="topingredientKdishescolumn"></tr>
+    <tr mat-row *matRowDef="let row; columns: topingredientKdishescolumn;"></tr>
+</table>
+
+</div>
+  <br> <br>
             
         </mat-tab>
 

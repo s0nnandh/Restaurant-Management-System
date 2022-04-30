@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, FormControl} from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartConfiguration, ChartOptions, ChartType, ChartData } from 'chart.js';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-analytics',
@@ -21,8 +22,9 @@ export class AnalyticsComponent implements OnInit {
   rush:any;
   rushhours: number[]=[];
   radius: number[]=[];
-
-
+  // readonly Url;
+  ids : Map<string,number> = new Map<string,number>();
+  ingredients : string[] = [];
 
   labels: string[] = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];  
   public lineChartData: ChartConfiguration['data'] | undefined;
@@ -55,14 +57,43 @@ export class AnalyticsComponent implements OnInit {
     k: new FormControl('', [Validators.required, Validators.pattern("^[0-9]+$")]),
   });
 
+  ingredientKForm = new FormGroup({
+    ingredient: new FormControl('', [Validators.required]),
+    k: new FormControl('', [Validators.required, Validators.pattern("^[0-9]+$")]),
+  });
+
   topdayKdishes:any;
   topdayKdishescolumn: any=['dish_rank','item_id','item_name'];
 
-  constructor(private employeeService : EmployeeService, private router: Router, private activatedroute:ActivatedRoute) { }
+  topingredientKdishes:any;
+  topingredientKdishescolumn: any=['item_id','item_name','ordered_quantity'];
+
+  constructor(private dataService : DataService, private employeeService : EmployeeService, private router: Router, private activatedroute:ActivatedRoute) {
+    // this.Url = 'api/ingredient/ingredient_info';
+    // this.getIngredients();
+   }
 
   ngOnInit(): void {
+    // this.topdayKdishes.reset();
+    // this.topingredientKdishes.reset();
     if(sessionStorage.getItem("role") != null) this.role = sessionStorage.getItem("role");
     this.getRushHours();
+    this.getIngredients();
+    
+  }
+
+  getIngredients(){
+    this.employeeService.getIngredients().pipe().subscribe(
+      (res : any) => {
+        console.log(res);
+        for(let x of res){
+          // console.log(x)
+          this.ids.set(x.name,x.ingredient_id);
+          this.ingredients.push(x.name)
+        }
+
+      }
+    )
   }
 
   decrease() {
@@ -110,6 +141,22 @@ export class AnalyticsComponent implements OnInit {
 
 
     });
+
+    
+
+  }
+
+  getTopdishesbyIngredients(){
+
+    var x = this.ingredientKForm.value;
+    this.employeeService.getTopdishesbyIngredients(Number(this.ids.get(x.ingredient)), x.k).pipe().subscribe((d: any) => {
+
+      this.topingredientKdishes =d;
+
+
+    });
+
+    
 
   }
 
