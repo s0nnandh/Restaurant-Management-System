@@ -37,5 +37,8 @@ export class EmployeeService {
     return this.http.get(`http://localhost:8000/api/analytics/rush_hours`);
   }
   
+  getTopdishesbyDay(day:number, k:number){
+    return this.http.get(`http://localhost:8000/api/analytics/popular_dishes_by_dow?day=${day}&limit=${k}`);
+  }
 
 }
