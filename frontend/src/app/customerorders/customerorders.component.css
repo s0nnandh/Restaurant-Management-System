@@ -1,5 +1,5 @@
 
-.li a {
+  li a {
     display: block;
     color: white;
     text-align: center;
@@ -7,14 +7,14 @@
     text-decoration: none;
   }
   
-  .li a:hover:not(.active) {
+  li a:hover:not(.active) {
     background-color: #111;
   }
   
   .active {
     background-color: #04AA6D;
   }
-  .ul {
+  ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -25,14 +25,6 @@
 .center {
     /* border: 5px solid #FFFF00; */
     text-align: center;
-}
-mat-card{
-  background-color: rgb(174, 211, 243);
-}
-.sss{
-  background-color: rgb(142, 173, 201);
-  padding: 1%;
-  border: #111;
 }
 body{
 	margin:0;
@@ -67,6 +59,53 @@ body{
   }
 
 
+/* Dropdown Button */
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+  }
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}
+
+
   td.mat-cell, th.mat-header-cell {
     text-align: center;
     justify-content:center;
@@ -93,8 +132,7 @@ body{
     background-color: rgb(196, 214, 218);
   }
 
-
-.example-sidenav-content .mat-icon {
+  .example-sidenav-content .mat-icon {
     
     vertical-align: left;
     background-color: #6c7b95;
@@ -105,30 +143,4 @@ body{
     justify-content: left;
     
   }
-
-  .mat-form-field + .mat-form-field {
-    margin-left: 8px;
-  }
   
-
-.vertical { 
-      /* background-color: yellow;  */
-      display: block;
-      
-}
-
-/* Dropdown Button */
-.dropbtn {
-  background-color: #3498DB;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  width: 90%;
-}
-
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
-}

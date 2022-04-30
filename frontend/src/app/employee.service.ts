@@ -33,6 +33,14 @@ export class EmployeeService {
     return this.http.post('http://localhost:8000/api/employee/add_delivery_person', data);
   }
 
+  getCustomerCompletedOrders(customer_id: number){
+    return this.http.get(`http://localhost:8000/api/customer/get_completed_orders/${customer_id}`);
+  }
+
+  getCustomerInCompletedOrders(customer_id: number){
+    return this.http.get(`http://localhost:8000/api/customer/get_incomplete_orders/${customer_id}`);
+  }
+
   getRushHours(){
     return this.http.get(`http://localhost:8000/api/analytics/rush_hours`);
   }
