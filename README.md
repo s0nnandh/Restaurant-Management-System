@@ -1,1 +1,1 @@
-# DBIS_Project
+# Restaurant Management System
